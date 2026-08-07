@@ -1,0 +1,289 @@
+{
+  "fields": [
+    {
+      "id": "aerospace-engineering",
+      "name": "Aerospace Engineering",
+      "summary": "Aerospace engineers design, analyze, test, and certify aircraft, spacecraft, satellites, and propulsion systems for companies like Boeing, SpaceX, and Lockheed Martin.",
+      "pathway": [
+        { "level": 1, "title": "Aerospace Engineer I / Design Engineer", "yearRange": "0-1", "description": "Works under senior engineer supervision on component-level design, CAD modeling, and analysis (stress, aero, thermal); supports test campaigns and documentation for a single subsystem." },
+        { "level": 2, "title": "Aerospace Engineer II / Systems Engineer", "yearRange": "1-3", "description": "Owns a subsystem or discipline area (e.g., propulsion, structures, avionics) with reduced oversight; runs trade studies, interfaces with suppliers, and contributes to design reviews." },
+        { "level": 3, "title": "Senior Aerospace Engineer / Lead Engineer", "yearRange": "3-5", "description": "Leads a small engineering team or major subsystem across the full lifecycle, mentors junior engineers, owns technical risk and schedule for their area, and represents the team at program-level reviews." },
+        { "level": 4, "title": "Principal Engineer / Engineering Manager / Chief Engineer", "yearRange": "5+", "description": "Sets technical direction across a program or product line, manages engineers and budgets (or serves as technical authority in an IC track), and interfaces directly with customers (NASA, DoD, airlines) and executive leadership." }
+      ],
+      "companies": ["Boeing", "Lockheed Martin", "Northrop Grumman", "RTX (Raytheon/Pratt & Whitney/Collins Aerospace)", "SpaceX", "Blue Origin", "NASA (JPL/field centers)", "General Dynamics (Gulfstream)", "Rocket Lab", "Textron Aviation"],
+      "certifications": [
+        { "name": "Certified Systems Engineering Professional (CSEP)", "provider": "INCOSE" },
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state licensing boards" },
+        { "name": "FAA Designated Engineering Representative (DER)", "provider": "Federal Aviation Administration" },
+        { "name": "Lean Six Sigma Black Belt", "provider": "ASQ" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS in Aerospace Engineering", "schools": ["MIT", "Stanford", "Georgia Tech", "Purdue"] },
+        { "name": "MS in Systems Engineering", "schools": ["USC", "Johns Hopkins", "Georgia Tech"] },
+        { "name": "MS in Astronautical/Space Systems Engineering", "schools": ["USC", "Naval Postgraduate School"] },
+        { "name": "Engineering-focused MBA", "schools": ["MIT Sloan", "USC Marshall"] }
+      ],
+      "conferences": ["AIAA SciTech Forum", "AIAA AVIATION Forum", "Space Symposium (Colorado Springs)", "Farnborough International Airshow / Paris Air Show", "IEEE Aerospace Conference"],
+      "organizations": ["AIAA (American Institute of Aeronautics and Astronautics)", "SAE International", "INCOSE (International Council on Systems Engineering)", "ASME (American Society of Mechanical Engineers)", "Women in Aerospace"]
+    },
+    {
+      "id": "mechanical-engineering",
+      "name": "Mechanical Engineering",
+      "summary": "Mechanical engineers design, analyze, and build physical systems and machines, from vehicles and aircraft to robotics and manufacturing equipment, spanning industries like aerospace, automotive, energy, and consumer products.",
+      "pathway": [
+        { "level": 1, "title": "Mechanical Engineer I / Design Engineer", "yearRange": "0-2", "description": "Works under supervision on component-level design, CAD modeling, testing, and documentation; builds fundamentals in tools like SolidWorks/CATIA and analysis methods while executing well-defined tasks." },
+        { "level": 2, "title": "Mechanical Engineer II / Design Engineer II", "yearRange": "2-4", "description": "Owns subsystem design and analysis with less oversight, runs FEA/simulation studies, coordinates with manufacturing and suppliers, and begins mentoring junior engineers." },
+        { "level": 3, "title": "Senior Mechanical Engineer", "yearRange": "4-7", "description": "Leads major project components or full small systems, makes independent technical trade-off decisions, reviews others' designs, and often pursues PE licensure to expand scope." },
+        { "level": 4, "title": "Principal Engineer / Engineering Manager", "yearRange": "7+", "description": "Sets engineering standards across programs, leads cross-functional technical strategy or manages a team, and represents engineering in major design reviews and business decisions." }
+      ],
+      "companies": ["Boeing", "Lockheed Martin", "GE Aerospace", "Ford Motor Company", "Tesla", "Caterpillar", "Northrop Grumman", "SpaceX", "John Deere", "Honeywell"],
+      "certifications": [
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES" },
+        { "name": "Certified SOLIDWORKS Professional (CSWP)", "provider": "Dassault Systèmes SOLIDWORKS" },
+        { "name": "Six Sigma Black Belt", "provider": "ASQ" },
+        { "name": "GD&T Professional (GDTP)", "provider": "ASME" },
+        { "name": "Certified Manufacturing Engineer (CMfgE)", "provider": "SME" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS Mechanical Engineering", "schools": ["MIT", "Stanford", "Georgia Tech", "University of Michigan"] },
+        { "name": "MS Robotics", "schools": ["Georgia Tech", "University of Michigan", "Carnegie Mellon"] },
+        { "name": "Master of Engineering in Manufacturing", "schools": ["MIT", "Georgia Tech", "Purdue"] },
+        { "name": "MS Aerospace/Mechanical (thermal-fluids track)", "schools": ["Purdue", "UIUC", "Caltech"] }
+      ],
+      "conferences": ["ASME IMECE (International Mechanical Engineering Congress & Exposition)", "SAE WCX World Congress Experience", "FABTECH", "ASME IDETC/CIE"],
+      "organizations": ["ASME (American Society of Mechanical Engineers)", "SAE International", "SME (Society of Manufacturing Engineers)", "ASHRAE", "IEEE Robotics and Automation Society"]
+    },
+    {
+      "id": "civil-engineering",
+      "name": "Civil Engineering",
+      "summary": "Civil engineers design, build, and maintain the infrastructure that societies run on, roads, bridges, water systems, and buildings, moving from EIT to licensed PE as they take on greater project responsibility.",
+      "pathway": [
+        { "level": 1, "title": "Staff Engineer / Engineer-in-Training (EIT)", "yearRange": "0-2", "description": "Performs calculations, drafting/CAD, quantity takeoffs, and field observations under a licensed PE's supervision while studying for and taking the FE exam to earn EIT status." },
+        { "level": 2, "title": "Project Engineer", "yearRange": "2-4", "description": "Manages design packages and permit documents, coordinates with contractors and architects, and begins sitting for the PE exam after accumulating the required years of supervised experience." },
+        { "level": 3, "title": "Licensed Civil Engineer / Project Manager (PE)", "yearRange": "4-8", "description": "Now a licensed PE, owns full project scope, budget, and schedule; stamps drawings, manages client relationships, and reviews and mentors junior engineers." },
+        { "level": 4, "title": "Senior Project Manager / Principal / Associate", "yearRange": "8+", "description": "Directs multiple projects or a practice area, leads business development and proposals, carries P&L or client-relationship accountability, and sets technical standards across teams." }
+      ],
+      "companies": ["AECOM", "Jacobs Solutions", "WSP USA", "Stantec", "HDR", "HNTB", "Kimley-Horn", "Burns & McDonnell", "Arcadis", "Tetra Tech"],
+      "certifications": [
+        { "name": "Professional Engineer (PE)", "provider": "NCEES / state licensing boards" },
+        { "name": "Structural Engineer (SE) license", "provider": "NCEES" },
+        { "name": "Envision Sustainability Professional (ENV SP)", "provider": "Institute for Sustainable Infrastructure" },
+        { "name": "Certified Construction Manager (CCM)", "provider": "Construction Management Association of America (CMAA)" },
+        { "name": "LEED Accredited Professional", "provider": "U.S. Green Building Council / GBCI" }
+      ],
+      "mastersPrograms": [
+        { "name": "M.S. Civil Engineering (Structural)", "schools": ["UC Berkeley", "Georgia Tech", "University of Illinois Urbana-Champaign"] },
+        { "name": "M.S. Civil Engineering (Geotechnical)", "schools": ["UT Austin", "Virginia Tech", "Purdue"] },
+        { "name": "M.S. Transportation Engineering", "schools": ["MIT", "UC Berkeley", "Texas A&M"] },
+        { "name": "Master of Construction Management", "schools": ["Stanford", "Columbia", "Michigan State"] },
+        { "name": "M.S. Environmental/Water Resources Engineering", "schools": ["Stanford", "University of Michigan", "Cornell"] }
+      ],
+      "conferences": ["ASCE Structures Congress", "ASCE OPAL Awards & Convention", "ACEC Annual Convention", "ASCE Geo-Congress", "ASCE Construction Institute (CI) Conference"],
+      "organizations": ["American Society of Civil Engineers (ASCE)", "American Council of Engineering Companies (ACEC)", "Structural Engineering Institute (SEI)", "Construction Management Association of America (CMAA)", "National Society of Professional Engineers (NSPE)"]
+    },
+    {
+      "id": "electrical-engineering",
+      "name": "Electrical Engineering",
+      "summary": "Electrical engineers design, test, and improve the systems that generate, distribute, and control electrical power and signals, from microchips to the power grid to EV drivetrains.",
+      "pathway": [
+        { "level": 1, "title": "Associate / Electrical Engineer I", "yearRange": "0-1", "description": "Works under senior engineer supervision on circuit design, testing, and documentation; builds prototypes and runs validation tests while learning company design standards." },
+        { "level": 2, "title": "Electrical Engineer II / Design Engineer", "yearRange": "1-3", "description": "Owns discrete subsystems or components independently, interfaces with suppliers and cross-functional teams, and begins leading small design reviews." },
+        { "level": 3, "title": "Senior Electrical Engineer", "yearRange": "3-5", "description": "Leads full projects end-to-end, mentors junior engineers, resolves complex design tradeoffs, and often begins pursuing PE licensure or specialization." },
+        { "level": 4, "title": "Principal Electrical Engineer / Engineering Lead", "yearRange": "5+", "description": "Serves as technical authority across multiple projects or a product line, sets design standards, drives architecture decisions, and influences engineering strategy." }
+      ],
+      "companies": ["Intel", "Texas Instruments", "NVIDIA", "Qualcomm", "Tesla", "Raytheon (RTX)", "Lockheed Martin", "Northrop Grumman", "Schneider Electric", "Eaton"],
+      "certifications": [
+        { "name": "Professional Engineer (PE) License", "provider": "NSPE / state licensing boards" },
+        { "name": "Certified Energy Manager", "provider": "Association of Energy Engineers" },
+        { "name": "NABCEP PV Installation Professional", "provider": "North American Board of Certified Energy Practitioners" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS Electrical Engineering – Power Electronics/Energy Systems", "schools": ["Georgia Institute of Technology", "UT Dallas", "NJIT", "UMass Lowell"] },
+        { "name": "MS / Master of VLSI & Microelectronics", "schools": ["Illinois Institute of Technology", "Georgia Institute of Technology", "UT Dallas"] },
+        { "name": "MS Electrical Engineering – RF/Microwave & Communications", "schools": ["Wright State University", "NYU Tandon"] },
+        { "name": "MS Electrical & Computer Engineering – Digital Design/Embedded Systems", "schools": ["UT Dallas", "Georgia Institute of Technology"] }
+      ],
+      "conferences": ["IEEE Applied Power Electronics Conference (APEC)", "IEEE International Solid-State Circuits Conference (ISSCC)", "IEEE PES General Meeting", "Design Automation Conference (DAC)", "IEEE Industry Applications Society (IAS) Annual Meeting"],
+      "organizations": ["IEEE (Institute of Electrical and Electronics Engineers)", "National Society of Professional Engineers (NSPE)", "IEEE-Eta Kappa Nu (IEEE-HKN)", "Association of Energy Engineers (AEE)", "Society of Women Engineers (SWE)"]
+    },
+    {
+      "id": "computer-science-software-engineering",
+      "name": "Computer Science / Software Engineering",
+      "summary": "Software engineers design, build, and maintain the applications, systems, and infrastructure that power modern products, with a career path that moves from writing well-scoped code to owning architecture and technical strategy.",
+      "pathway": [
+        { "level": 1, "title": "Software Engineer I (SDE I / Junior SWE)", "yearRange": "0-1", "description": "Writes and tests code on well-defined tasks under close mentorship, ramps on codebase and tooling, and contributes to small features or bug fixes with senior review." },
+        { "level": 2, "title": "Software Engineer II (SDE II)", "yearRange": "1-3", "description": "Owns features end-to-end with less oversight, participates in design discussions, writes production-quality code and tests, and starts mentoring interns/new hires." },
+        { "level": 3, "title": "Senior Software Engineer (SDE III / Senior SWE)", "yearRange": "3-5", "description": "Leads design and delivery of complex, cross-team projects, sets technical direction for a component or service, mentors other engineers, and is a go-to expert in their domain." },
+        { "level": 4, "title": "Staff / Principal Engineer", "yearRange": "5+", "description": "Drives architecture and technical strategy across multiple teams or the org, resolves ambiguous cross-cutting problems, influences roadmaps, and multiplies impact through mentorship and technical leadership." }
+      ],
+      "companies": ["Google", "Microsoft", "Amazon", "Meta", "Apple", "Netflix", "Stripe", "NVIDIA", "Salesforce", "Atlassian"],
+      "certifications": [
+        { "name": "AWS Certified Solutions Architect (Associate/Professional)", "provider": "Amazon Web Services" },
+        { "name": "Microsoft Certified: Azure Solutions Architect Expert", "provider": "Microsoft" },
+        { "name": "Google Cloud Professional Cloud Architect", "provider": "Google Cloud" },
+        { "name": "Certified Kubernetes Administrator/Application Developer (CKA/CKAD)", "provider": "Cloud Native Computing Foundation" },
+        { "name": "Certified ScrumMaster (CSM)", "provider": "Scrum Alliance" }
+      ],
+      "mastersPrograms": [
+        { "name": "Online Master of Science in Computer Science (OMSCS)", "schools": ["Georgia Institute of Technology"] },
+        { "name": "Master of Computer Science in Data Science (MCS-DS)", "schools": ["University of Illinois Urbana-Champaign"] },
+        { "name": "Master of Applied Science in Computer Science (formerly MCIT Online)", "schools": ["University of Pennsylvania"] },
+        { "name": "Master of Science in Computer Science Online (MSCSO)", "schools": ["University of Texas at Austin"] },
+        { "name": "On-campus MS in Computer Science", "schools": ["Stanford University", "Carnegie Mellon University", "MIT"] }
+      ],
+      "conferences": ["WeAreDevelopers World Congress", "KubeCon + CloudNativeCon", "Google Cloud Next", "AWS re:Invent", "QCon"],
+      "organizations": ["Association for Computing Machinery (ACM)", "IEEE Computer Society", "USENIX", "Society of Women Engineers (SWE)", "Linux Foundation"]
+    },
+    {
+      "id": "chemical-engineering",
+      "name": "Chemical Engineering",
+      "summary": "Chemical engineers design, scale, and optimize the processes that turn raw materials into fuels, chemicals, pharmaceuticals, and advanced materials.",
+      "pathway": [
+        { "level": 1, "title": "Process Engineer I / Associate Chemical Engineer", "yearRange": "0-1", "description": "Supports plant operations under supervision, monitors process data, runs small experiments/trials, writes SOPs, and assists with routine troubleshooting and safety reviews." },
+        { "level": 2, "title": "Process Engineer II / Project Engineer", "yearRange": "1-3", "description": "Owns process areas independently, leads small capital or debottlenecking projects, performs mass/energy balance and P&ID work, and participates in HAZOP/process safety reviews." },
+        { "level": 3, "title": "Senior Process Engineer / Process Engineering Lead", "yearRange": "3-5", "description": "Leads multi-discipline improvement or expansion projects, mentors junior engineers, manages vendor and contractor relationships, and drives yield, cost, and reliability targets across a unit." },
+        { "level": 4, "title": "Principal Engineer / Engineering Manager / Process Safety Fellow", "yearRange": "5+", "description": "Sets technical direction for a site or business unit, owns capital project portfolios, represents the company on process safety/regulatory matters, and manages engineering teams." }
+      ],
+      "companies": ["ExxonMobil", "Dow", "Shell", "BASF", "Chevron Phillips Chemical", "DuPont", "Evonik", "LyondellBasell", "Eastman Chemical", "Air Products"],
+      "certifications": [
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state boards" },
+        { "name": "Certified Process Safety Professional (CCPSC)", "provider": "AIChE Center for Chemical Process Safety (CCPS)" },
+        { "name": "Certified Automation Professional (CAP)", "provider": "International Society of Automation (ISA)" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+      ],
+      "mastersPrograms": [
+        { "name": "M.S. Chemical Engineering", "schools": ["Stanford University", "MIT", "UC Berkeley"] },
+        { "name": "M.Ch.E. (process/data-and-systems concentration)", "schools": ["University of Texas at Austin", "Georgia Tech"] },
+        { "name": "M.S. Process Systems Engineering", "schools": ["Imperial College London", "Carnegie Mellon University"] },
+        { "name": "Master of Engineering in Chemical Engineering Practice", "schools": ["MIT"] },
+        { "name": "M.S. Petroleum/Energy Engineering", "schools": ["Texas A&M University", "University of Oklahoma"] }
+      ],
+      "conferences": ["AIChE Annual Meeting", "AIChE Spring Meeting and Global Congress on Process Safety", "Pittcon", "ACHEMA", "AIChE Southwest Process Technology Conference"],
+      "organizations": ["American Institute of Chemical Engineers (AIChE)", "Center for Chemical Process Safety (CCPS)", "International Society of Automation (ISA)", "American Chemical Society (ACS)", "Society of Women Engineers (SWE)"]
+    },
+    {
+      "id": "data-science-statistics",
+      "name": "Data Science & Statistics",
+      "summary": "Data scientists and statisticians turn raw data into predictive models, experiments, and decision-support tools that drive business and product strategy.",
+      "pathway": [
+        { "level": 1, "title": "Data Scientist I / Data Analyst", "yearRange": "0-2", "description": "Cleans and explores datasets, builds dashboards and basic statistical/ML models under close guidance, and translates stakeholder questions into well-scoped analyses." },
+        { "level": 2, "title": "Data Scientist II", "yearRange": "2-4", "description": "Owns end-to-end projects (experiment design, modeling, deployment support), works directly with product/business partners, and starts mentoring junior analysts." },
+        { "level": 3, "title": "Senior Data Scientist", "yearRange": "4-7", "description": "Leads cross-functional initiatives, sets technical direction for a domain (e.g., forecasting, personalization), reviews others' work, and influences roadmap decisions." },
+        { "level": 4, "title": "Staff/Principal Data Scientist (or Analytics Manager)", "yearRange": "7+", "description": "Defines technical strategy across teams, drives org-wide standards and high-impact bets, and either goes deep as a technical IC or moves into people management overseeing a data science team." }
+      ],
+      "companies": ["Google", "Meta", "Amazon", "Microsoft", "Netflix", "Airbnb", "Stripe", "Capital One", "IBM", "DoorDash"],
+      "certifications": [
+        { "name": "IBM Data Science Professional Certificate", "provider": "IBM / Coursera" },
+        { "name": "Google Data Analytics Professional Certificate", "provider": "Google" },
+        { "name": "AWS Certified Machine Learning Engineer – Associate", "provider": "Amazon Web Services" },
+        { "name": "SAS Certified Data Scientist", "provider": "SAS Institute" },
+        { "name": "Microsoft Certified: Azure Data Scientist Associate", "provider": "Microsoft" }
+      ],
+      "mastersPrograms": [
+        { "name": "Master of Science in Analytics (Online)", "schools": ["Georgia Institute of Technology"] },
+        { "name": "Master of Information and Data Science (MIDS)", "schools": ["UC Berkeley"] },
+        { "name": "Master of Science in Data Science", "schools": ["Johns Hopkins University", "Columbia University"] },
+        { "name": "Master of Science in Statistics", "schools": ["Stanford University", "University of Michigan"] },
+        { "name": "Master of Computational Data Science", "schools": ["Carnegie Mellon University"] }
+      ],
+      "conferences": ["ODSC (Open Data Science Conference) East/West", "NeurIPS", "KDD (ACM SIGKDD)", "Strata Data + AI Conference", "JSM (Joint Statistical Meetings)"],
+      "organizations": ["American Statistical Association (ASA)", "INFORMS", "ACM SIGKDD", "Women in Data Science (WiDS)", "Institute of Mathematical Statistics (IMS)"]
+    },
+    {
+      "id": "biomedical-engineering",
+      "name": "Biomedical Engineering",
+      "summary": "Biomedical engineers apply engineering principles to design, test, and bring to market medical devices and diagnostics such as pacemakers, imaging systems, and surgical instruments.",
+      "pathway": [
+        { "level": 1, "title": "R&D / Design Engineer I", "yearRange": "0-1", "description": "Entry-level role doing hands-on design, prototyping, and testing of components/subsystems under senior engineer supervision, often supporting design verification and documentation for FDA submissions." },
+        { "level": 2, "title": "Design Engineer II / R&D Engineer", "yearRange": "1-3", "description": "Owns design of subsystems or full devices, runs design verification/validation testing, and collaborates with regulatory and quality teams on 510(k)/PMA documentation with growing design autonomy." },
+        { "level": 3, "title": "Senior Design Engineer / Product Development Engineer", "yearRange": "3-5", "description": "Leads cross-functional design projects end-to-end, mentors junior engineers, drives risk management (FMEA) and design controls, and interfaces directly with regulatory bodies and manufacturing partners." },
+        { "level": 4, "title": "Principal Engineer / Engineering Manager / Director of R&D", "yearRange": "5+", "description": "Sets technical strategy across a product line or platform, manages engineering teams and budgets, and represents R&D to executives, clinicians, and external partners on major program decisions." }
+      ],
+      "companies": ["Medtronic", "Johnson & Johnson MedTech", "Boston Scientific", "Abbott", "Stryker", "Siemens Healthineers", "GE HealthCare", "Philips Healthcare", "ResMed", "Becton Dickinson"],
+      "certifications": [
+        { "name": "Certified Quality Engineer (CQE)", "provider": "ASQ" },
+        { "name": "Regulatory Affairs Certification (RAC)", "provider": "Regulatory Affairs Professionals Society (RAPS)" },
+        { "name": "Certified Biomedical Equipment Technician (CBET)", "provider": "AAMI" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" }
+      ],
+      "mastersPrograms": [
+        { "name": "Master of Engineering in MedTech Design", "schools": ["Duke University"] },
+        { "name": "MS in Medical Device and Diagnostic Engineering", "schools": ["USC Viterbi"] },
+        { "name": "Professional Master's in Biomedical Engineering", "schools": ["Purdue University"] },
+        { "name": "MS in Biomedical Regulatory Affairs", "schools": ["University of Washington"] },
+        { "name": "MS in Medical Device Engineering", "schools": ["Keck Graduate Institute"] }
+      ],
+      "conferences": ["BMES Annual Meeting", "MD&M West", "DeviceTalks Boston", "RAPS Regulatory Convergence", "AAMI eXchange"],
+      "organizations": ["Biomedical Engineering Society (BMES)", "IEEE Engineering in Medicine and Biology Society (EMBS)", "Association for the Advancement of Medical Instrumentation (AAMI)", "Regulatory Affairs Professionals Society (RAPS)", "American Society for Quality (ASQ)"]
+    },
+    {
+      "id": "biotechnology-pharmaceutical-sciences",
+      "name": "Biotechnology / Pharmaceutical Sciences",
+      "summary": "Bench scientists in biotech/pharma design and run laboratory experiments that turn early discoveries into approved therapies, advancing from hands-on technician roles into experiment-owning, then program-leading positions.",
+      "pathway": [
+        { "level": 1, "title": "Research Associate I", "yearRange": "0-1", "description": "Executes established experimental protocols (cell culture, assays, PCR, etc.) under direct supervision; focuses on precise data collection and lab documentation rather than experimental design." },
+        { "level": 2, "title": "Research Associate II / Senior Research Associate", "yearRange": "1-3", "description": "Works with greater independence, troubleshoots failed experiments, may train new hires, and starts contributing input to experimental design and small project workstreams." },
+        { "level": 3, "title": "Scientist I / Scientist", "yearRange": "3-5", "description": "Independently designs and executes experiments, owns a defined project or workstream, interprets data, and presents findings to cross-functional teams (e.g., process development, regulatory)." },
+        { "level": 4, "title": "Senior Scientist / Principal Scientist", "yearRange": "5+", "description": "Leads a research program or platform, sets scientific strategy and priorities, mentors junior scientists, and may begin managing a small team while remaining hands-on technically." }
+      ],
+      "companies": ["Pfizer", "Merck", "Genentech (Roche)", "Amgen", "Regeneron", "Vertex Pharmaceuticals", "Moderna", "Novartis", "Bristol Myers Squibb", "Gilead Sciences"],
+      "certifications": [
+        { "name": "Regulatory Affairs Certification – Drugs (RAC-Drugs)", "provider": "Regulatory Affairs Professionals Society (RAPS)" },
+        { "name": "Six Sigma Green Belt", "provider": "ASQ" },
+        { "name": "Certified Quality Auditor (CQA)", "provider": "ASQ" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS in Biotechnology", "schools": ["Johns Hopkins University", "University of Pennsylvania", "Northwestern University"] },
+        { "name": "MS in Regulatory Affairs", "schools": ["Northeastern University", "George Washington University", "San Diego State University"] },
+        { "name": "MS in Bioinformatics", "schools": ["Boston University", "Georgia Institute of Technology", "Johns Hopkins University"] },
+        { "name": "MBA with Biotech/Pharma focus", "schools": ["MIT Sloan", "The Wharton School (UPenn)", "Kellogg School of Management (Northwestern)"] }
+      ],
+      "conferences": ["BIO International Convention", "AACR Annual Meeting", "SLAS International Conference and Exhibition", "DIA Global Annual Meeting", "PEGS Summit"],
+      "organizations": ["American Association of Pharmaceutical Scientists (AAPS)", "American Chemical Society (ACS)", "Biotechnology Innovation Organization (BIO)", "American Society for Biochemistry and Molecular Biology (ASBMB)", "Regulatory Affairs Professionals Society (RAPS)"]
+    },
+    {
+      "id": "public-health-epidemiology",
+      "name": "Public Health & Epidemiology",
+      "summary": "Public health professionals and epidemiologists investigate disease patterns and design data-driven policies and programs to protect population health across government, health systems, and nonprofits.",
+      "pathway": [
+        { "level": 1, "title": "Epidemiologist I / Public Health Analyst", "yearRange": "0-1", "description": "Conducts case investigations, data entry/cleaning, and basic surveillance reporting under supervision at a health department or health system; supports outbreak response and routine disease reporting." },
+        { "level": 2, "title": "Epidemiologist II", "yearRange": "1-3", "description": "Independently manages surveillance systems and datasets, leads outbreak investigations, and produces epidemiological reports and analyses with growing autonomy over study design and statistical methods." },
+        { "level": 3, "title": "Senior Epidemiologist / Epidemiology Program Coordinator", "yearRange": "3-5", "description": "Leads a disease program or research portfolio, designs studies and evaluation protocols, mentors junior epidemiologists, and represents the program to external partners and policymakers." },
+        { "level": 4, "title": "Epidemiology Program Director / Chief Epidemiologist", "yearRange": "5+", "description": "Sets strategic priorities and oversees budget and staffing for a division or program area, translates surveillance data into policy recommendations, and serves as the organization's senior technical authority." }
+      ],
+      "companies": ["CDC", "NYC Department of Health and Mental Hygiene", "California Department of Public Health", "Kaiser Permanente", "IHME (Institute for Health Metrics and Evaluation)", "WHO", "Mathematica", "RTI International", "PATH", "American Cancer Society"],
+      "certifications": [
+        { "name": "Certified in Public Health (CPH)", "provider": "National Board of Public Health Examiners" },
+        { "name": "Certified in Public Health Essentials (CPHE)", "provider": "National Board of Public Health Examiners" },
+        { "name": "Certified in Disease Intervention (CDI)", "provider": "National Board of Public Health Examiners" },
+        { "name": "Certified Health Education Specialist (CHES)", "provider": "National Commission for Health Education Credentialing" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+      ],
+      "mastersPrograms": [
+        { "name": "Master of Public Health (MPH), Epidemiology concentration", "schools": ["Johns Hopkins Bloomberg School of Public Health", "Harvard T.H. Chan School of Public Health", "Columbia Mailman School of Public Health", "Emory Rollins School of Public Health"] },
+        { "name": "Master of Science in Epidemiology", "schools": ["University of Michigan", "University of Washington", "UCLA Fielding School of Public Health"] },
+        { "name": "Master of Health Science in Epidemiology (MHS)", "schools": ["Johns Hopkins Bloomberg School of Public Health"] },
+        { "name": "Master of Science in Biostatistics", "schools": ["Harvard T.H. Chan School of Public Health", "UNC Gillings School of Global Public Health"] }
+      ],
+      "conferences": ["APHA Annual Meeting & Expo", "CSTE Annual Conference", "Epidemic Intelligence Service (EIS) Conference", "Society for Epidemiologic Research (SER) Annual Meeting", "ASTHO Annual Meeting"],
+      "organizations": ["Council of State and Territorial Epidemiologists (CSTE)", "American Public Health Association (APHA)", "American College of Epidemiology (ACE)", "Society for Epidemiologic Research (SER)", "Association of Schools and Programs of Public Health (ASPPH)"]
+    }
+  ],
+  "skills": [
+    { "name": "Public Speaking & Presenting", "resources": ["Toastmasters International", "\"Talk Like TED\" by Carmine Gallo", "Dale Carnegie Training"] },
+    { "name": "Time Management & Focus", "resources": ["\"Getting Things Done\" by David Allen", "\"Deep Work\" by Cal Newport", "The Pomodoro Technique (Francesco Cirillo)"] },
+    { "name": "Written & Verbal Communication", "resources": ["\"The Pyramid Principle\" by Barbara Minto", "\"Crucial Conversations\" by Patterson, Grenny, McMillan & Switzler", "Coursera: Improving Communication Skills (University of Pennsylvania)"] },
+    { "name": "Leadership & People Management", "resources": ["\"The Making of a Manager\" by Julie Zhuo", "\"Radical Candor\" by Kim Scott", "American Management Association (AMA) courses"] },
+    { "name": "Project Management", "resources": ["Project Management Institute (PMI) / PMP certification", "\"Scrum: The Art of Doing Twice the Work in Half the Time\" by Jeff Sutherland", "Google Project Management Professional Certificate (Coursera)"] },
+    { "name": "Negotiation", "resources": ["\"Getting to Yes\" by Fisher & Ury", "\"Never Split the Difference\" by Chris Voss", "Program on Negotiation at Harvard Law School (PON)"] },
+    { "name": "Networking & Relationship-Building", "resources": ["\"Never Eat Alone\" by Keith Ferrazzi", "LinkedIn Learning networking courses", "Local chapters of field-specific professional organizations"] },
+    { "name": "Emotional Intelligence & Conflict Resolution", "resources": ["\"Emotional Intelligence\" by Daniel Goleman", "\"Difficult Conversations\" by Stone, Patton & Heen", "Community mediation center training programs"] },
+    { "name": "Financial Literacy", "resources": ["\"I Will Teach You to Be Rich\" by Ramit Sethi", "Bogleheads community/wiki", "Stanford CS 007: Personal Finance for Engineers"] },
+    { "name": "Personal Branding & Career Development", "resources": ["\"Designing Your Life\" by Bill Burnett & Dave Evans", "LinkedIn Learning career-development courses", "University career center / alumni mentorship programs"] }
+  ]
+}
