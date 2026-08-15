@@ -285,5 +285,95 @@
     { "name": "Emotional Intelligence & Conflict Resolution", "resources": ["\"Emotional Intelligence\" by Daniel Goleman", "\"Difficult Conversations\" by Stone, Patton & Heen", "Community mediation center training programs"] },
     { "name": "Financial Literacy", "resources": ["\"I Will Teach You to Be Rich\" by Ramit Sethi", "Bogleheads community/wiki", "Stanford CS 007: Personal Finance for Engineers"] },
     { "name": "Personal Branding & Career Development", "resources": ["\"Designing Your Life\" by Bill Burnett & Dave Evans", "LinkedIn Learning career-development courses", "University career center / alumni mentorship programs"] }
+  ],
+  "majors": [
+    {
+      "id": "aerospace-engineering-major",
+      "name": "Aerospace Engineering",
+      "summary": "Aerospace engineering blends physics, math, and materials science to design aircraft, spacecraft, and the propulsion systems that get them off the ground.",
+      "typicalCourses": ["Calculus I-III", "Differential Equations", "Statics & Dynamics", "Aerodynamics", "Propulsion Systems", "Aircraft/Spacecraft Structures", "Flight Mechanics & Controls"],
+      "whyChooseIt": "A strong fit for students who love physics and want to work on flight, space exploration, or defense systems, and who don't mind a rigorous, math-heavy curriculum.",
+      "leadsToFields": ["aerospace-engineering"]
+    },
+    {
+      "id": "mechanical-engineering-major",
+      "name": "Mechanical Engineering",
+      "summary": "One of the broadest engineering majors, covering how physical systems move, generate power, and get manufactured — from engines to robots to consumer products.",
+      "typicalCourses": ["Statics", "Dynamics", "Thermodynamics", "Fluid Mechanics", "Materials Science", "Mechanics of Materials", "Machine Design", "Heat Transfer"],
+      "whyChooseIt": "Good for students who like hands-on building and want maximum flexibility after graduation — mechanical engineers work across nearly every industry.",
+      "leadsToFields": ["mechanical-engineering"]
+    },
+    {
+      "id": "civil-engineering-major",
+      "name": "Civil Engineering",
+      "summary": "Civil engineering trains students to design and build the infrastructure society depends on: roads, bridges, water systems, and buildings.",
+      "typicalCourses": ["Statics", "Structural Analysis", "Geotechnical Engineering (Soil Mechanics)", "Fluid Mechanics & Hydraulics", "Construction Materials", "Surveying", "Transportation Engineering"],
+      "whyChooseIt": "Appeals to students who want to see tangible, lasting results in the world around them and who are interested in a clear path toward professional licensure (PE).",
+      "leadsToFields": ["civil-engineering"]
+    },
+    {
+      "id": "electrical-engineering-major",
+      "name": "Electrical Engineering",
+      "summary": "Electrical engineering covers the systems that generate, distribute, and control electricity and signals — from microchips to the power grid.",
+      "typicalCourses": ["Circuit Analysis", "Electromagnetics", "Digital Logic Design", "Signals & Systems", "Semiconductor Devices", "Power Systems", "Control Systems"],
+      "whyChooseIt": "A strong choice for students drawn to both hardware and theory, with career paths spanning chips, power, robotics, and communications.",
+      "leadsToFields": ["electrical-engineering"]
+    },
+    {
+      "id": "computer-science-major",
+      "name": "Computer Science",
+      "summary": "Computer science teaches how to design, build, and reason about software systems — the algorithms, data structures, and infrastructure behind modern technology.",
+      "typicalCourses": ["Data Structures & Algorithms", "Discrete Mathematics", "Computer Architecture", "Operating Systems", "Databases", "Software Engineering", "Computer Networks"],
+      "whyChooseIt": "Great for students who enjoy problem-solving and building things quickly, with some of the widest range of industries hiring straight out of undergrad.",
+      "leadsToFields": ["computer-science-software-engineering"]
+    },
+    {
+      "id": "chemical-engineering-major",
+      "name": "Chemical Engineering",
+      "summary": "Chemical engineering applies chemistry, physics, and math to design the processes that turn raw materials into fuels, chemicals, and pharmaceuticals at scale.",
+      "typicalCourses": ["General & Organic Chemistry", "Thermodynamics", "Fluid Mechanics", "Mass & Heat Transfer", "Chemical Reaction Engineering", "Process Design & Control", "Separations"],
+      "whyChooseIt": "Fits students who like chemistry but want to work on large-scale industrial processes rather than lab bench research alone.",
+      "leadsToFields": ["chemical-engineering"]
+    },
+    {
+      "id": "statistics-data-science-major",
+      "name": "Statistics / Data Science",
+      "summary": "This major builds the math, programming, and modeling skills to turn raw data into predictions and decisions.",
+      "typicalCourses": ["Calculus & Linear Algebra", "Probability Theory", "Mathematical Statistics", "Regression Analysis", "Machine Learning", "Databases & SQL", "Experimental Design"],
+      "whyChooseIt": "A good fit for students who like math and want it applied to real business or scientific questions rather than pure theory.",
+      "leadsToFields": ["data-science-statistics"]
+    },
+    {
+      "id": "biomedical-engineering-major",
+      "name": "Biomedical Engineering",
+      "summary": "Biomedical engineering applies engineering principles to the human body, training students to design medical devices, diagnostics, and health technologies.",
+      "typicalCourses": ["Biology & Human Physiology", "Circuits", "Biomechanics", "Biomaterials", "Medical Instrumentation", "Biosignal Processing", "Medical Device Design"],
+      "whyChooseIt": "Ideal for students who want an engineering career with a direct, tangible connection to healthcare and human impact.",
+      "leadsToFields": ["biomedical-engineering"]
+    },
+    {
+      "id": "biology-biochemistry-major",
+      "name": "Biology / Biochemistry",
+      "summary": "A life-sciences major covering the chemistry and biology of living systems, the standard entry point into bench science and biotech/pharma careers.",
+      "typicalCourses": ["General & Organic Chemistry", "Cell Biology", "Genetics", "Molecular Biology", "Biochemistry", "Microbiology", "Laboratory Techniques"],
+      "whyChooseIt": "A natural fit for students who enjoyed high school biology/chemistry and want to work in a lab turning scientific discoveries into real therapies.",
+      "leadsToFields": ["biotechnology-pharmaceutical-sciences"]
+    },
+    {
+      "id": "public-health-major",
+      "name": "Public Health",
+      "summary": "Public health majors study how to protect and improve population-level health through data, policy, and programs, rather than treating individual patients.",
+      "typicalCourses": ["Biostatistics", "Epidemiology", "Environmental Health", "Health Policy & Management", "Social & Behavioral Health Sciences", "Global Health", "Research Methods"],
+      "whyChooseIt": "Good for students who care about health but want to work on prevention and systems-level impact rather than clinical practice.",
+      "leadsToFields": ["public-health-epidemiology"]
+    }
+  ],
+  "resources": [
+    {
+      "title": "O*NET Interest Profiler",
+      "url": "https://www.mynextmove.org/explore/ip",
+      "provider": "U.S. Department of Labor",
+      "description": "Free ~20-minute interest assessment based on the RIASEC model. Maps your answers to 900+ real occupations with salary and outlook data — a good starting point if you're not sure which STEM field fits you yet."
+    }
   ]
 }

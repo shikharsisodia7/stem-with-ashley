@@ -68,3 +68,35 @@ This almost always means the JSON structure got broken (a missing comma, an extr
 comma, or a missing bracket). Paste the full contents of `roadmap-data.json` into
 [jsonlint.com](https://jsonlint.com) and click "Validate JSON" — it will tell you
 exactly which line has the problem.
+
+## Adding a new major
+
+Majors live in the `"majors"` list near the end of the file, after `"skills"`. Each one
+looks like:
+
+```
+{
+  "id": "your-major-slug",
+  "name": "Your Major Name",
+  "summary": "One-line description for the majors grid card.",
+  "typicalCourses": ["Course 1", "Course 2", "..."],
+  "whyChooseIt": "A sentence or two on what draws students to this major.",
+  "leadsToFields": ["matching-field-id"]
+}
+```
+
+Copy an existing major block, edit every value, and give it a unique `"id"`. The
+`"leadsToFields"` list must contain the `"id"` of an existing field from the `"fields"`
+list above (e.g. `"mechanical-engineering"`) — that's what makes the "Careers this leads
+to" links on the major's page work.
+
+## Adding a new resource
+
+Resources live in the `"resources"` list at the very end of the file:
+
+```
+{ "title": "Resource Name", "url": "https://...", "provider": "Who runs it", "description": "One sentence on what it helps a student figure out." }
+```
+
+Copy the existing O*NET entry and edit the values. Always test the URL in a browser
+before saving.
