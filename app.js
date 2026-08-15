@@ -92,6 +92,57 @@ function renderHome() {
     <div class="field-grid">${cards}</div>`;
 }
 
+function renderMajors() {
+  const cards = ROADMAP_DATA.majors
+    .map((m) => `
+      <div class="field-card">
+        <a class="field-card-link" href="#/major/${esc(m.id)}">
+          <h3>${esc(m.name)}</h3>
+          <p>${esc(m.summary)}</p>
+        </a>
+      </div>`)
+    .join("");
+
+  return `
+    <h1>Explore a STEM major</h1>
+    <p>Haven't picked a major yet? Browse what each one actually involves and see the careers it leads to.</p>
+    <div class="field-grid">${cards}</div>`;
+}
+
+function renderMajorDetail(majorId) {
+  const major = ROADMAP_DATA.majors.find((m) => m.id === majorId);
+  if (!major) {
+    return `<p><a class="back-link" href="#/majors">&larr; Back to all majors</a></p><p>Major not found.</p>`;
+  }
+
+  const courseChips = major.typicalCourses
+    .map((c) => `<span class="chip">${esc(c)}</span>`)
+    .join("");
+
+  const fieldLinks = major.leadsToFields
+    .map((fieldId) => {
+      const field = ROADMAP_DATA.fields.find((f) => f.id === fieldId);
+      if (!field) return "";
+      return `<div class="item-row"><div class="item-text item-title"><a href="#/field/${esc(field.id)}">${esc(field.name)}</a></div></div>`;
+    })
+    .join("");
+
+  return `
+    <a class="back-link" href="#/majors">&larr; Back to all majors</a>
+    <h1>${esc(major.name)}</h1>
+    <p>${esc(major.summary)}</p>
+
+    <h2>Why students choose it</h2>
+    <p>${esc(major.whyChooseIt)}</p>
+
+    <h2>Typical courses</h2>
+    <div class="chip-list">${courseChips}</div>
+
+    <h2>Careers this leads to</h2>
+    ${fieldLinks || `<p class="empty-state">No linked careers yet.</p>`}
+  `;
+}
+
 function renderField(fieldId) {
   const field = ROADMAP_DATA.fields.find((f) => f.id === fieldId);
   if (!field) {
@@ -314,6 +365,13 @@ function render() {
   if (hash === "/") {
     app.innerHTML = renderHome();
     updateNavActive("/");
+  } else if (hash === "/majors") {
+    app.innerHTML = renderMajors();
+    updateNavActive("/majors");
+  } else if (hash.startsWith("/major/")) {
+    const id = decodeURIComponent(hash.slice("/major/".length));
+    app.innerHTML = renderMajorDetail(id);
+    updateNavActive("");
   } else if (hash.startsWith("/field/")) {
     const id = decodeURIComponent(hash.slice("/field/".length));
     app.innerHTML = renderField(id);
