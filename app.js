@@ -143,6 +143,28 @@ function renderMajorDetail(majorId) {
   `;
 }
 
+function renderResources() {
+  const rows = ROADMAP_DATA.resources
+    .map((r) => `
+      <div class="item-row">
+        <div class="item-text">
+          <div class="item-title"><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></div>
+          <div class="item-sub">${esc(r.provider)}</div>
+          <p>${esc(r.description)}</p>
+        </div>
+      </div>`)
+    .join("");
+
+  return `
+    <h1>Resources</h1>
+    <p>Extra tools to help you plan your STEM career.</p>
+    ${rows}
+
+    <h2>Looking for a job?</h2>
+    <p>Once you're ready to search for roles, check out the <a href="jobs/">Job Finder</a> — filter open STEM roles by field, experience level, and location.</p>
+  `;
+}
+
 function renderField(fieldId) {
   const field = ROADMAP_DATA.fields.find((f) => f.id === fieldId);
   if (!field) {
@@ -379,6 +401,9 @@ function render() {
   } else if (hash === "/skills") {
     app.innerHTML = renderSkills();
     updateNavActive("/skills");
+  } else if (hash === "/resources") {
+    app.innerHTML = renderResources();
+    updateNavActive("/resources");
   } else if (hash === "/shortlist") {
     app.innerHTML = renderShortlist();
     updateNavActive("/shortlist");

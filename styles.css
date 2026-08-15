@@ -133,6 +133,7 @@ h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
 .item-row .item-text { flex: 1; }
 .item-row .item-title { font-weight: 600; }
 .item-row .item-sub { color: var(--text-muted); font-size: 0.88rem; }
+.item-row .item-text p { margin: 0.4rem 0 0; color: var(--text-muted); font-size: 0.92rem; }
 
 .chip-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
 .chip {
