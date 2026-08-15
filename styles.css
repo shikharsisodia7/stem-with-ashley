@@ -38,11 +38,25 @@ a:hover { text-decoration: underline; }
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--text);
 }
 .brand:hover { text-decoration: none; }
+.brand-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .brand-logo { width: 1.75rem; height: 1.75rem; }
+}
 
 .site-nav { display: flex; gap: 1.25rem; align-items: center; }
 .site-nav a { color: var(--text-muted); font-weight: 600; }
