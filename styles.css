@@ -58,7 +58,7 @@ a:hover { text-decoration: underline; }
   .brand-logo { width: 1.75rem; height: 1.75rem; }
 }
 
-.site-nav { display: flex; gap: 1.25rem; align-items: center; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; }
 .site-nav a { color: var(--text-muted); font-weight: 600; }
 .site-nav a.active { color: var(--brand); }
 
