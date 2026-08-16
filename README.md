@@ -82,7 +82,7 @@ loads independently of the hash-router above. Reach it directly at `/jobs/`, via
 small set of sample job listings (clearly labeled as sample data in the UI) by field,
 keyword, experience level, and location, using a pure filtering function
 (`jobs/jobs-filter.js`) covered by Node test-runner tests (`jobs/jobs-filter.test.js`,
-run with `node --test jobs/`). Swapping in a real job-listings API later only requires
+run with `node --test jobs/jobs-filter.test.js`). Swapping in a real job-listings API later only requires
 replacing `jobs/jobs-data.js`'s sample array with a fetch — the filter logic and UI
 don't need to change.
 
