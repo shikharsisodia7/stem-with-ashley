@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Finder — Stem With Ashley</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="jobs.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../assets/logo.jpeg" alt="Stem With Ashley logo" width="40" height="40" />
+      <span>Stem&nbsp;With&nbsp;Ashley — Job&nbsp;Finder</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html">&larr; Back to Roadmap</a>
+    </nav>
+  </header>
+
+  <main id="jobs-app" aria-live="polite">
+    <h1>Find a STEM job</h1>
+    <p class="sample-banner">These are sample listings for demo purposes. See the comment at the top of <code>jobs-data.js</code> for how to connect a real job feed.</p>
+
+    <form id="jobs-filters" class="jobs-filters">
+      <div class="filter-field">
+        <label for="filter-keyword">Keyword</label>
+        <input type="text" id="filter-keyword" name="keyword" placeholder="e.g. robotics, clinical, backend" />
+      </div>
+      <div class="filter-field">
+        <label for="filter-field-select">STEM field</label>
+        <select id="filter-field-select" name="fieldId">
+          <option value="">All fields</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-level">Experience level</label>
+        <select id="filter-level" name="experienceLevel">
+          <option value="">Any level</option>
+          <option value="internship">Internship</option>
+          <option value="new-grad">New grad</option>
+          <option value="1-3-years">1-3 years</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-location">Location</label>
+        <input type="text" id="filter-location" name="location" placeholder="City, state, or 'remote'" />
+      </div>
+    </form>
+
+    <p id="jobs-count" class="jobs-count"></p>
+    <div id="jobs-list" class="jobs-list"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Sample job data for demonstration. Not real, currently open listings.</p>
+  </footer>
+
+  <script src="jobs-data.js"></script>
+  <script src="jobs-filter.js"></script>
+  <script src="jobs-app.js"></script>
+</body>
+</html>

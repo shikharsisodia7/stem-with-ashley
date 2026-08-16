@@ -1,0 +1,48 @@
+main#jobs-app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  min-height: 60vh;
+}
+
+.sample-banner {
+  background: #fff7e6;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.jobs-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.filter-field { display: flex; flex-direction: column; gap: 0.3rem; }
+.filter-field label { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+.filter-field input, .filter-field select {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.jobs-count { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.job-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+.job-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+.job-card p { color: var(--text-muted); font-size: 0.92rem; margin: 0.6rem 0 0; }
