@@ -19,7 +19,7 @@
     </nav>
   </header>
 
-  <main id="jobs-app" aria-live="polite">
+  <main id="jobs-app">
     <h1>Find a STEM job</h1>
     <p class="sample-banner">These are sample listings for demo purposes. See the comment at the top of <code>jobs-data.js</code> for how to connect a real job feed.</p>
 
@@ -49,7 +49,7 @@
       </div>
     </form>
 
-    <p id="jobs-count" class="jobs-count"></p>
+    <p id="jobs-count" class="jobs-count" aria-live="polite" aria-atomic="true"></p>
     <div id="jobs-list" class="jobs-list"></div>
   </main>
 

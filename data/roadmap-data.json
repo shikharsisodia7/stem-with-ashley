@@ -59,7 +59,7 @@
       "organizations": ["ASME (American Society of Mechanical Engineers)", "SAE International", "SME (Society of Manufacturing Engineers)", "ASHRAE", "IEEE Robotics and Automation Society"],
       "media": [
         { "type": "youtube", "title": "Day in the Life of a Mechanical Engineer | Factory Life", "url": "https://www.youtube.com/watch?v=EXI3uQCxP38", "description": "A mechanical engineer who helped build a battery gigafactory shows a real factory-floor workday." },
-        { "type": "podcast", "title": "Being an Engineer — Tony Kelbert", "url": "https://podcasts.apple.com/us/podcast/being-an-engineer/id1508222292", "description": "Established engineering-career podcast interviewing a mechanical engineer/manufacturing strategist about his career." }
+        { "type": "podcast", "title": "Being an Engineer", "url": "https://podcasts.apple.com/us/podcast/being-an-engineer/id1508222292", "description": "Established engineering-career podcast interviewing a mechanical engineer/manufacturing strategist about his career." }
       ]
     },
     {
@@ -218,7 +218,7 @@
       "organizations": ["American Statistical Association (ASA)", "INFORMS", "ACM SIGKDD", "Women in Data Science (WiDS)", "Institute of Mathematical Statistics (IMS)"],
       "media": [
         { "type": "youtube", "title": "A Day in The Life of a Google Data Scientist (Analytics)", "url": "https://www.youtube.com/watch?v=CSdpk6NzvhY", "description": "A senior analytics lead at Google shows a real day working as a data scientist." },
-        { "type": "podcast", "title": "DataFramed: How to Have a Machine Learning Career in 2026", "url": "https://www.datacamp.com/podcast/how-to-have-a-data-science-career-in-2026", "description": "DataCamp's podcast interviews a working ML/data scientist about the data science job, interviewing, and career growth." }
+        { "type": "podcast", "title": "DataFramed: How to Have a Data Science Career in 2026", "url": "https://www.datacamp.com/podcast/how-to-have-a-data-science-career-in-2026", "description": "DataCamp's podcast interviews a working ML/data scientist about the data science job, interviewing, and career growth." }
       ]
     },
     {
@@ -310,7 +310,7 @@
       "organizations": ["Council of State and Territorial Epidemiologists (CSTE)", "American Public Health Association (APHA)", "American College of Epidemiology (ACE)", "Society for Epidemiologic Research (SER)", "Association of Schools and Programs of Public Health (ASPPH)"],
       "media": [
         { "type": "youtube", "title": "Public Health Careers: Epidemiologist, Part 1", "url": "https://www.youtube.com/watch?v=tYx-fO5hMA4", "description": "Official CDC channel video in which a CDC epidemiologist describes his real day-to-day work studying how diseases affect populations." },
-        { "type": "podcast", "title": "Public Health Epidemiology Conversations — Preparing For The Worst Day", "url": "https://podcasts.apple.com/us/podcast/public-health-epidemiology-conversations/id1279064696", "description": "An epidemiologist-hosted podcast episode covering real emergency-preparedness epidemiology work in a state health department." }
+        { "type": "podcast", "title": "Public Health Epidemiology Conversations", "url": "https://podcasts.apple.com/us/podcast/public-health-epidemiology-conversations/id1279064696", "description": "An epidemiologist-hosted podcast episode covering real emergency-preparedness epidemiology work in a state health department." }
       ]
     }
   ],

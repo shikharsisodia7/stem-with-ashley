@@ -2,6 +2,12 @@ const JOBS_ROADMAP_DATA_URL = "../data/roadmap-data.json";
 
 let FIELD_NAMES = {}; // fieldId -> name, loaded from the roadmap data file
 
+const EXPERIENCE_LABELS = {
+  "internship": "Internship",
+  "new-grad": "New grad",
+  "1-3-years": "1-3 years",
+};
+
 function esc(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -20,14 +26,15 @@ function currentFilters() {
 
 function jobCard(job) {
   const fieldName = FIELD_NAMES[job.fieldId] || job.fieldId;
-  const locationLabel = job.remote ? `${job.location} (Remote)` : job.location;
+  const locationLabel = job.remote && job.location.toLowerCase() !== "remote"
+    ? `${job.location} (Remote)` : job.location;
   return `
     <div class="job-card">
       <h3>${esc(job.title)}</h3>
       <div class="item-sub">${esc(job.company)} &middot; ${esc(fieldName)}</div>
       <div class="chip-list">
         <span class="chip">${esc(locationLabel)}</span>
-        <span class="chip">${esc(job.experienceLevel)}</span>
+        <span class="chip">${esc(EXPERIENCE_LABELS[job.experienceLevel] || job.experienceLevel)}</span>
       </div>
       <p>${esc(job.description)}</p>
     </div>`;
