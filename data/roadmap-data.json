@@ -25,7 +25,11 @@
         { "name": "Engineering-focused MBA", "schools": ["MIT Sloan", "USC Marshall"] }
       ],
       "conferences": ["AIAA SciTech Forum", "AIAA AVIATION Forum", "Space Symposium (Colorado Springs)", "Farnborough International Airshow / Paris Air Show", "IEEE Aerospace Conference"],
-      "organizations": ["AIAA (American Institute of Aeronautics and Astronautics)", "SAE International", "INCOSE (International Council on Systems Engineering)", "ASME (American Society of Mechanical Engineers)", "Women in Aerospace"]
+      "organizations": ["AIAA (American Institute of Aeronautics and Astronautics)", "SAE International", "INCOSE (International Council on Systems Engineering)", "ASME (American Society of Mechanical Engineers)", "Women in Aerospace"],
+      "media": [
+        { "type": "youtube", "title": "Day In My Life as a NASA Engineer", "url": "https://www.youtube.com/watch?v=IaEv63ut6fU", "description": "A NASA JPL aerospace/electrical engineer walks through a real day of her engineering work and life." },
+        { "type": "podcast", "title": "The Aerospace Engineering Podcast", "url": "https://podcasts.apple.com/us/podcast/the-aerospace-engineering-podcast/id1299428170", "description": "Interview-format show featuring conversations with aerospace engineers about their careers and technical work." }
+      ]
     },
     {
       "id": "mechanical-engineering",
@@ -52,7 +56,11 @@
         { "name": "MS Aerospace/Mechanical (thermal-fluids track)", "schools": ["Purdue", "UIUC", "Caltech"] }
       ],
       "conferences": ["ASME IMECE (International Mechanical Engineering Congress & Exposition)", "SAE WCX World Congress Experience", "FABTECH", "ASME IDETC/CIE"],
-      "organizations": ["ASME (American Society of Mechanical Engineers)", "SAE International", "SME (Society of Manufacturing Engineers)", "ASHRAE", "IEEE Robotics and Automation Society"]
+      "organizations": ["ASME (American Society of Mechanical Engineers)", "SAE International", "SME (Society of Manufacturing Engineers)", "ASHRAE", "IEEE Robotics and Automation Society"],
+      "media": [
+        { "type": "youtube", "title": "Day in the Life of a Mechanical Engineer | Factory Life", "url": "https://www.youtube.com/watch?v=EXI3uQCxP38", "description": "A mechanical engineer who helped build a battery gigafactory shows a real factory-floor workday." },
+        { "type": "podcast", "title": "Being an Engineer — Tony Kelbert", "url": "https://podcasts.apple.com/us/podcast/being-an-engineer/id1508222292", "description": "Established engineering-career podcast interviewing a mechanical engineer/manufacturing strategist about his career." }
+      ]
     },
     {
       "id": "civil-engineering",
@@ -80,7 +88,11 @@
         { "name": "M.S. Environmental/Water Resources Engineering", "schools": ["Stanford", "University of Michigan", "Cornell"] }
       ],
       "conferences": ["ASCE Structures Congress", "ASCE OPAL Awards & Convention", "ACEC Annual Convention", "ASCE Geo-Congress", "ASCE Construction Institute (CI) Conference"],
-      "organizations": ["American Society of Civil Engineers (ASCE)", "American Council of Engineering Companies (ACEC)", "Structural Engineering Institute (SEI)", "Construction Management Association of America (CMAA)", "National Society of Professional Engineers (NSPE)"]
+      "organizations": ["American Society of Civil Engineers (ASCE)", "American Council of Engineering Companies (ACEC)", "Structural Engineering Institute (SEI)", "Construction Management Association of America (CMAA)", "National Society of Professional Engineers (NSPE)"],
+      "media": [
+        { "type": "youtube", "title": "An ACTUAL Day In The Life of a CIVIL ENGINEER. Construction Site Engineer.", "url": "https://www.youtube.com/watch?v=G-j39crM4mc", "description": "A real construction site engineer walks through an actual workday in the UK." },
+        { "type": "podcast", "title": "TCEP 311: Developing Leadership Skills In Civil Engineering", "url": "https://engineeringmanagementinstitute.org/tcep-311-developing-leadership-skills-in-civil-engineering/", "description": "Episode of The Civil Engineering Podcast on building leadership and communication skills as a practicing civil engineer." }
+      ]
     },
     {
       "id": "electrical-engineering",
@@ -107,7 +119,11 @@
         { "name": "MS Electrical & Computer Engineering – Digital Design/Embedded Systems", "schools": ["UT Dallas", "Georgia Institute of Technology"] }
       ],
       "conferences": ["IEEE Applied Power Electronics Conference (APEC)", "IEEE International Solid-State Circuits Conference (ISSCC)", "IEEE PES General Meeting", "Design Automation Conference (DAC)", "IEEE Industry Applications Society (IAS) Annual Meeting"],
-      "organizations": ["IEEE (Institute of Electrical and Electronics Engineers)", "National Society of Professional Engineers (NSPE)", "IEEE-Eta Kappa Nu (IEEE-HKN)", "Association of Energy Engineers (AEE)", "Society of Women Engineers (SWE)"]
+      "organizations": ["IEEE (Institute of Electrical and Electronics Engineers)", "National Society of Professional Engineers (NSPE)", "IEEE-Eta Kappa Nu (IEEE-HKN)", "Association of Energy Engineers (AEE)", "Society of Women Engineers (SWE)"],
+      "media": [
+        { "type": "youtube", "title": "What is it like to be an Electrical Engineer? | Day in the Life", "url": "https://www.youtube.com/watch?v=KLBzEnVMPDE", "description": "An official manufacturer channel follows an electrical engineer through a real day at the company." },
+        { "type": "podcast", "title": "The Amp Hour Electronics Podcast", "url": "https://podcasts.apple.com/us/podcast/the-amp-hour-electronics-podcast/id386547290", "description": "Long-running weekly show discussing electronics design work and engineering careers with real hardware engineers." }
+      ]
     },
     {
       "id": "computer-science-software-engineering",
@@ -135,7 +151,11 @@
         { "name": "On-campus MS in Computer Science", "schools": ["Stanford University", "Carnegie Mellon University", "MIT"] }
       ],
       "conferences": ["WeAreDevelopers World Congress", "KubeCon + CloudNativeCon", "Google Cloud Next", "AWS re:Invent", "QCon"],
-      "organizations": ["Association for Computing Machinery (ACM)", "IEEE Computer Society", "USENIX", "Society of Women Engineers (SWE)", "Linux Foundation"]
+      "organizations": ["Association for Computing Machinery (ACM)", "IEEE Computer Society", "USENIX", "Society of Women Engineers (SWE)", "Linux Foundation"],
+      "media": [
+        { "type": "youtube", "title": "A Day in the Life Series: Justin Ridings, Software Engineer at Microsoft", "url": "https://www.youtube.com/watch?v=J7mCQC4e3eA", "description": "Official Microsoft channel profile of a working software engineer showing his actual workday." },
+        { "type": "podcast", "title": "Software Engineering Daily", "url": "https://podcasts.apple.com/us/podcast/software-engineering-daily/id1019576853", "description": "Established daily interview show with practicing software engineers about real engineering work and career paths." }
+      ]
     },
     {
       "id": "chemical-engineering",
@@ -163,7 +183,11 @@
         { "name": "M.S. Petroleum/Energy Engineering", "schools": ["Texas A&M University", "University of Oklahoma"] }
       ],
       "conferences": ["AIChE Annual Meeting", "AIChE Spring Meeting and Global Congress on Process Safety", "Pittcon", "ACHEMA", "AIChE Southwest Process Technology Conference"],
-      "organizations": ["American Institute of Chemical Engineers (AIChE)", "Center for Chemical Process Safety (CCPS)", "International Society of Automation (ISA)", "American Chemical Society (ACS)", "Society of Women Engineers (SWE)"]
+      "organizations": ["American Institute of Chemical Engineers (AIChE)", "Center for Chemical Process Safety (CCPS)", "International Society of Automation (ISA)", "American Chemical Society (ACS)", "Society of Women Engineers (SWE)"],
+      "media": [
+        { "type": "youtube", "title": "On My Way: A Day in the Life of a Process Engineer", "url": "https://www.youtube.com/watch?v=4EbPykh_bmo", "description": "A government career series follows a real process/chemical engineer through a workday." },
+        { "type": "podcast", "title": "CE Podcast: Guest Greg Schinkel discusses engineering career paths and leadership skills", "url": "https://www.chemengonline.com/ce-podcast-guest-greg-schinkel-discusses-engineering-career-paths-and-leadership-skills/", "description": "Chemical Engineering magazine's official podcast on career paths open to chemical engineers." }
+      ]
     },
     {
       "id": "data-science-statistics",
@@ -191,7 +215,11 @@
         { "name": "Master of Computational Data Science", "schools": ["Carnegie Mellon University"] }
       ],
       "conferences": ["ODSC (Open Data Science Conference) East/West", "NeurIPS", "KDD (ACM SIGKDD)", "Strata Data + AI Conference", "JSM (Joint Statistical Meetings)"],
-      "organizations": ["American Statistical Association (ASA)", "INFORMS", "ACM SIGKDD", "Women in Data Science (WiDS)", "Institute of Mathematical Statistics (IMS)"]
+      "organizations": ["American Statistical Association (ASA)", "INFORMS", "ACM SIGKDD", "Women in Data Science (WiDS)", "Institute of Mathematical Statistics (IMS)"],
+      "media": [
+        { "type": "youtube", "title": "A Day in The Life of a Google Data Scientist (Analytics)", "url": "https://www.youtube.com/watch?v=CSdpk6NzvhY", "description": "A senior analytics lead at Google shows a real day working as a data scientist." },
+        { "type": "podcast", "title": "DataFramed: How to Have a Machine Learning Career in 2026", "url": "https://www.datacamp.com/podcast/how-to-have-a-data-science-career-in-2026", "description": "DataCamp's podcast interviews a working ML/data scientist about the data science job, interviewing, and career growth." }
+      ]
     },
     {
       "id": "biomedical-engineering",
@@ -218,7 +246,11 @@
         { "name": "MS in Medical Device Engineering", "schools": ["Keck Graduate Institute"] }
       ],
       "conferences": ["BMES Annual Meeting", "MD&M West", "DeviceTalks Boston", "RAPS Regulatory Convergence", "AAMI eXchange"],
-      "organizations": ["Biomedical Engineering Society (BMES)", "IEEE Engineering in Medicine and Biology Society (EMBS)", "Association for the Advancement of Medical Instrumentation (AAMI)", "Regulatory Affairs Professionals Society (RAPS)", "American Society for Quality (ASQ)"]
+      "organizations": ["Biomedical Engineering Society (BMES)", "IEEE Engineering in Medicine and Biology Society (EMBS)", "Association for the Advancement of Medical Instrumentation (AAMI)", "Regulatory Affairs Professionals Society (RAPS)", "American Society for Quality (ASQ)"],
+      "media": [
+        { "type": "youtube", "title": "On My Way: A Day in the Life of a Biomedical Engineer", "url": "https://www.youtube.com/watch?v=oMtn1XXyDyA", "description": "A government career series follows a real biomedical engineer keeping hospital medical devices running." },
+        { "type": "podcast", "title": "Office Hours Episode 9: What Comes After Graduation? Finding Your Path in Biomedical Engineering", "url": "https://www.bmes.org/podcast/officehours/episode9", "description": "BMES's official podcast on the path from bioengineering study to a biopharmaceutical industry career." }
+      ]
     },
     {
       "id": "biotechnology-pharmaceutical-sciences",
@@ -244,7 +276,11 @@
         { "name": "MBA with Biotech/Pharma focus", "schools": ["MIT Sloan", "The Wharton School (UPenn)", "Kellogg School of Management (Northwestern)"] }
       ],
       "conferences": ["BIO International Convention", "AACR Annual Meeting", "SLAS International Conference and Exhibition", "DIA Global Annual Meeting", "PEGS Summit"],
-      "organizations": ["American Association of Pharmaceutical Scientists (AAPS)", "American Chemical Society (ACS)", "Biotechnology Innovation Organization (BIO)", "American Society for Biochemistry and Molecular Biology (ASBMB)", "Regulatory Affairs Professionals Society (RAPS)"]
+      "organizations": ["American Association of Pharmaceutical Scientists (AAPS)", "American Chemical Society (ACS)", "Biotechnology Innovation Organization (BIO)", "American Society for Biochemistry and Molecular Biology (ASBMB)", "Regulatory Affairs Professionals Society (RAPS)"],
+      "media": [
+        { "type": "youtube", "title": "Day in the Life at Amgen: Dymond", "url": "https://www.youtube.com/watch?v=X3v37y2KZSo", "description": "Official Amgen company channel follows a biotech professional through her real workday at the pharmaceutical company." },
+        { "type": "podcast", "title": "The Biotech Startups Podcast", "url": "https://podcasts.apple.com/us/podcast/the-biotech-startups-podcast/id1679591994", "description": "Interviews with biotech/pharma scientists and founders about building drug-discovery and life-sciences careers." }
+      ]
     },
     {
       "id": "public-health-epidemiology",
@@ -271,7 +307,11 @@
         { "name": "Master of Science in Biostatistics", "schools": ["Harvard T.H. Chan School of Public Health", "UNC Gillings School of Global Public Health"] }
       ],
       "conferences": ["APHA Annual Meeting & Expo", "CSTE Annual Conference", "Epidemic Intelligence Service (EIS) Conference", "Society for Epidemiologic Research (SER) Annual Meeting", "ASTHO Annual Meeting"],
-      "organizations": ["Council of State and Territorial Epidemiologists (CSTE)", "American Public Health Association (APHA)", "American College of Epidemiology (ACE)", "Society for Epidemiologic Research (SER)", "Association of Schools and Programs of Public Health (ASPPH)"]
+      "organizations": ["Council of State and Territorial Epidemiologists (CSTE)", "American Public Health Association (APHA)", "American College of Epidemiology (ACE)", "Society for Epidemiologic Research (SER)", "Association of Schools and Programs of Public Health (ASPPH)"],
+      "media": [
+        { "type": "youtube", "title": "Public Health Careers: Epidemiologist, Part 1", "url": "https://www.youtube.com/watch?v=tYx-fO5hMA4", "description": "Official CDC channel video in which a CDC epidemiologist describes his real day-to-day work studying how diseases affect populations." },
+        { "type": "podcast", "title": "Public Health Epidemiology Conversations — Preparing For The Worst Day", "url": "https://podcasts.apple.com/us/podcast/public-health-epidemiology-conversations/id1279064696", "description": "An epidemiologist-hosted podcast episode covering real emergency-preparedness epidemiology work in a state health department." }
+      ]
     }
   ],
   "skills": [

@@ -203,6 +203,23 @@ function renderField(fieldId) {
     })
     .join("");
 
+  const media = field.media || [];
+  const mediaItems = media
+    .map((m) => {
+      const label = m.type === "youtube" ? "YouTube" : "Podcast";
+      return `
+        <div class="item-row">
+          <div class="item-text">
+            <div class="item-title"><a href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">${esc(m.title)}</a> <span class="item-sub">(${label})</span></div>
+            <div class="item-sub">${esc(m.description)}</div>
+          </div>
+        </div>`;
+    })
+    .join("");
+  const mediaSection = media.length
+    ? `<h2>Hear/see what this is really like</h2><div class="media-list">${mediaItems}</div>`
+    : "";
+
   const companyChips = field.companies
     .map((c) => `<span class="chip">${esc(c)}</span>`)
     .join("");
@@ -280,6 +297,7 @@ function renderField(fieldId) {
 
     <h2>Five-year pathway</h2>
     <div class="pathway">${pathwaySteps}</div>
+    ${mediaSection}
 
     <h2>Companies known for hiring in this field</h2>
     <div class="chip-list">${companyChips}</div>

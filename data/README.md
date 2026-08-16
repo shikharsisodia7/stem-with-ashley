@@ -100,3 +100,17 @@ Resources live in the `"resources"` list at the very end of the file:
 
 Copy the existing O*NET entry and edit the values. Always test the URL in a browser
 before saving.
+
+## Adding a podcast or YouTube link to a field
+
+Each field can have a `"media"` list, right after its `"organizations"` list:
+
+```
+"media": [
+  { "type": "youtube", "title": "Video title as it appears on YouTube", "url": "https://youtube.com/watch?v=...", "description": "One sentence on what it shows." }
+]
+```
+
+`"type"` must be exactly `"youtube"` or `"podcast"`. Always open the URL yourself first
+to confirm it's a real, working link that actually matches the description before
+saving — a broken or misleading link is worse than no link.
