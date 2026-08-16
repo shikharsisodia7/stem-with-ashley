@@ -16,9 +16,10 @@ to break from a bad build, and no dependency that can go stale or need updating.
 
 - `index.html` / `styles.css` / `app.js` — the app itself.
 - `data/roadmap-data.json` — **all the content** (career pathways, companies, certs,
-  schools, conferences, organizations, skills). This is the only file you need to
-  touch to update what the app shows. See **`data/README.md`** for a full editing
-  guide written for a non-technical editor.
+  schools, conferences, organizations, skills, majors, resources, and per-field
+  podcast/YouTube media links). This is the only file you need to touch to update
+  what the app shows. See **`data/README.md`** for a full editing guide written for a
+  non-technical editor.
 
 ## Editing the content (start here if you're Ashley)
 
@@ -57,6 +58,34 @@ python -m http.server 8000
 Then open `http://localhost:8000` in your browser. Stop the server with Ctrl+C when
 you're done.
 
+## Routes in this app
+
+The app is a single-page hash-router (`index.html` + `app.js`). Current routes:
+
+- `#/` — Fields grid (career fields)
+- `#/field/<id>` — Field detail (pathway, companies, certs, schools, conferences,
+  organizations, podcast/YouTube media links)
+- `#/majors` — Majors grid (college majors that feed into STEM fields)
+- `#/major/<id>` — Major detail (typical courses, why students choose it, links into
+  the STEM field(s) it leads to)
+- `#/skills` — Developmental skills
+- `#/resources` — General career-exploration resources, including the O*NET Interest
+  Profiler quiz
+- `#/shortlist` — Bookmarked items, printable
+
+## Job Finder sub-app
+
+`/jobs/` is a separate, self-contained sub-app living inside this same repo and
+deploy — it's a second static HTML page (`jobs/index.html` + its own JS/CSS) that
+loads independently of the hash-router above. Reach it directly at `/jobs/`, via the
+"Find a Job" link in the main nav, or from the Resources page. It currently filters a
+small set of sample job listings (clearly labeled as sample data in the UI) by field,
+keyword, experience level, and location, using a pure filtering function
+(`jobs/jobs-filter.js`) covered by Node test-runner tests (`jobs/jobs-filter.test.js`,
+run with `node --test jobs/`). Swapping in a real job-listings API later only requires
+replacing `jobs/jobs-data.js`'s sample array with a fetch — the filter logic and UI
+don't need to change.
+
 ## Project structure
 
 ```
@@ -67,6 +96,15 @@ stem-with-ashley/
   data/
     roadmap-data.json       # ALL content — edit this to update the app
     README.md                # editing guide for non-technical editors
+  jobs/
+    index.html               # standalone Job Finder sub-app (separate page)
+    jobs-app.js               # UI wiring for the Job Finder
+    jobs-filter.js             # pure filtering logic, used by the UI and by tests
+    jobs-filter.test.js         # Node test-runner tests for jobs-filter.js
+    jobs-data.js                 # sample job listings (swap for a real API later)
+    jobs.css                      # Job Finder-specific styling
+  assets/
+    logo.jpeg                # header logo / favicon
   docs/
     superpowers/specs/       # original design spec for this project
 ```
