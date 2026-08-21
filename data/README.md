@@ -11,6 +11,17 @@ comma or bracket will stop the whole app from loading. Follow the patterns below
 exactly and you'll be fine. When in doubt, copy an existing block and edit the text
 inside it rather than typing a new block from scratch.
 
+## Easier option: the Content Helper page
+
+If typing JSON by hand feels risky, open **`admin/index.html`** in a browser (either
+locally, via `python -m http.server 8000` then `http://localhost:8000/admin/`, or on
+the live site at `/admin/`). Pick what you're adding from the dropdown (a field, a
+major, a certification, a resource, a skill, or a job listing), fill in the plain-text
+form fields, and click "Generate content block." It builds a correctly formatted,
+already-punctuated block of JSON for you to copy and paste into the right spot in this
+file — no typing curly braces or commas yourself. It only builds text for you to paste;
+it never edits, saves, or publishes anything on its own.
+
 ## Editing an existing field
 
 Find the field by its `"name"` (e.g. `"name": "Aerospace Engineering"`). Everything
@@ -21,7 +32,11 @@ freely edit any of the text values:
 - `"pathway"` — the 4 career steps. Each has a `title`, a `yearRange` (like `"3-5"`),
   and a `description`. Edit the text, but keep all four steps.
 - `"companies"` — just a list of names in quotes, separated by commas.
-- `"certifications"` — each has a `name` and a `provider` (who issues it).
+- `"certifications"` — each has a `name`, a `provider` (who issues it), and a `url`
+  (a link straight to that certification's official page). The certification name is
+  clickable on the live site and opens this URL in a new tab — always use the real
+  provider's own website (pmi.org, asq.org, aws.amazon.com, etc.), never a blog or
+  third-party study-guide site. See "Adding or editing a certification" below.
 - `"mastersPrograms"` — each has a `name` and a list of `schools` that offer it.
 - `"conferences"` and `"organizations"` — lists of names in quotes.
 
@@ -41,6 +56,23 @@ together.
    separated by hyphens, must be unique — e.g. `"materials-science"`), a new `"name"`,
    and update every other field to match the new career area.
 5. Save the file.
+
+## Adding or editing a certification
+
+Each field aims to have about five certifications, each shaped like this:
+
+```
+{ "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" }
+```
+
+To add one: copy an existing certification `{ ... }` block inside that field's
+`"certifications"` list, add a comma after the previous entry, paste your copy in,
+and edit all three values. To fix a broken or outdated link, just edit the `"url"`
+value in place — the `name` and `provider` don't need to change.
+
+**Always open the URL yourself in a browser before saving**, and make sure it goes
+to that certification's real, official page (the issuing organization's own
+website) — not a course-seller, blog post, or search results page.
 
 ## Adding or editing a developmental skill
 

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Content Helper — Stem with Ashley Career Resources</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../assets/logo.jpeg" alt="Stem with Ashley Career Resources logo" width="40" height="40" />
+      <span class="brand-text">Stem&nbsp;with&nbsp;Ashley — Content&nbsp;Helper</span>
+    </a>
+    <nav class="site-nav">
+      <a href="../index.html">&larr; Back to site</a>
+    </nav>
+  </header>
+
+  <main id="admin-app">
+    <h1>Content Helper</h1>
+    <p>This page helps you build a correctly formatted block of content to paste into
+      <code>data/roadmap-data.json</code> or <code>jobs/jobs-data.js</code> — without having to
+      hand-type JSON yourself. It does <strong>not</strong> save, upload, or publish anything.
+      Nothing you type here leaves your browser, and this page cannot connect to GitHub or change
+      the live site on its own.</p>
+    <p class="privacy-note">🔒 Everything on this page runs locally in your browser. There are no
+      accounts, no sign-in, and no server involved.</p>
+
+    <div class="form-field">
+      <label for="content-type">What are you adding or editing?</label>
+      <select id="content-type">
+        <option value="field">Career Field</option>
+        <option value="major">Major</option>
+        <option value="certification">Certification (for an existing field)</option>
+        <option value="resource">Resource (Resources page)</option>
+        <option value="skill">Developmental Skill</option>
+        <option value="job">Job Listing (Job Finder sample data)</option>
+      </select>
+    </div>
+
+    <form id="admin-form" class="admin-form"></form>
+
+    <div class="admin-output-block">
+      <div class="admin-output-header">
+        <h2>Generated content block</h2>
+        <button type="button" class="btn btn-secondary" id="copy-btn">Copy to clipboard</button>
+      </div>
+      <pre id="admin-output" class="admin-output" tabindex="0"></pre>
+      <p id="admin-instructions" class="admin-instructions"></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Content Helper — a local tool for building JSON blocks by hand-free form filling. See
+      <code>data/README.md</code> for the full editing guide.</p>
+  </footer>
+
+  <script src="../utils.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -12,11 +12,11 @@
       ],
       "companies": ["Boeing", "Lockheed Martin", "Northrop Grumman", "RTX (Raytheon/Pratt & Whitney/Collins Aerospace)", "SpaceX", "Blue Origin", "NASA (JPL/field centers)", "General Dynamics (Gulfstream)", "Rocket Lab", "Textron Aviation"],
       "certifications": [
-        { "name": "Certified Systems Engineering Professional (CSEP)", "provider": "INCOSE" },
-        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state licensing boards" },
-        { "name": "FAA Designated Engineering Representative (DER)", "provider": "Federal Aviation Administration" },
-        { "name": "Lean Six Sigma Black Belt", "provider": "ASQ" },
-        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+        { "name": "Certified Systems Engineering Professional (CSEP)", "provider": "INCOSE", "url": "https://www.incose.org/certification/" },
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state licensing boards", "url": "https://ncees.org/engineering/pe/" },
+        { "name": "FAA Designated Engineering Representative (DER)", "provider": "Federal Aviation Administration", "url": "https://www.faa.gov/other_visit/aviation_industry/designees_delegations/individual_designees/der" },
+        { "name": "Lean Six Sigma Black Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-black-belt" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" }
       ],
       "mastersPrograms": [
         { "name": "MS in Aerospace Engineering", "schools": ["MIT", "Stanford", "Georgia Tech", "Purdue"] },
@@ -43,11 +43,11 @@
       ],
       "companies": ["Boeing", "Lockheed Martin", "GE Aerospace", "Ford Motor Company", "Tesla", "Caterpillar", "Northrop Grumman", "SpaceX", "John Deere", "Honeywell"],
       "certifications": [
-        { "name": "Professional Engineer (PE) License", "provider": "NCEES" },
-        { "name": "Certified SOLIDWORKS Professional (CSWP)", "provider": "Dassault Systèmes SOLIDWORKS" },
-        { "name": "Six Sigma Black Belt", "provider": "ASQ" },
-        { "name": "GD&T Professional (GDTP)", "provider": "ASME" },
-        { "name": "Certified Manufacturing Engineer (CMfgE)", "provider": "SME" }
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES", "url": "https://ncees.org/engineering/pe/" },
+        { "name": "Certified SOLIDWORKS Professional (CSWP)", "provider": "Dassault Systèmes SOLIDWORKS", "url": "https://www.solidworks.com/certifications/solidworks-design-professional" },
+        { "name": "Six Sigma Black Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-black-belt" },
+        { "name": "GD&T Professional (GDTP)", "provider": "ASME", "url": "https://www.asme.org/certification-accreditation/gdtp-certification" },
+        { "name": "Certified Manufacturing Engineer (CMfgE)", "provider": "SME", "url": "https://www.sme.org/training/technical-certification/certified-manufacturing-engineer-cmfge-certification/" }
       ],
       "mastersPrograms": [
         { "name": "MS Mechanical Engineering", "schools": ["MIT", "Stanford", "Georgia Tech", "University of Michigan"] },
@@ -74,11 +74,11 @@
       ],
       "companies": ["AECOM", "Jacobs Solutions", "WSP USA", "Stantec", "HDR", "HNTB", "Kimley-Horn", "Burns & McDonnell", "Arcadis", "Tetra Tech"],
       "certifications": [
-        { "name": "Professional Engineer (PE)", "provider": "NCEES / state licensing boards" },
-        { "name": "Structural Engineer (SE) license", "provider": "NCEES" },
-        { "name": "Envision Sustainability Professional (ENV SP)", "provider": "Institute for Sustainable Infrastructure" },
-        { "name": "Certified Construction Manager (CCM)", "provider": "Construction Management Association of America (CMAA)" },
-        { "name": "LEED Accredited Professional", "provider": "U.S. Green Building Council / GBCI" }
+        { "name": "Professional Engineer (PE)", "provider": "NCEES / state licensing boards", "url": "https://ncees.org/engineering/pe/" },
+        { "name": "Structural Engineer (SE) license", "provider": "NCEES", "url": "https://ncees.org/engineering/se/" },
+        { "name": "Envision Sustainability Professional (ENV SP)", "provider": "Institute for Sustainable Infrastructure", "url": "https://sustainableinfrastructure.org/envision/env-sp-training-certification/" },
+        { "name": "Certified Construction Manager (CCM)", "provider": "Construction Management Association of America (CMAA)", "url": "https://cmaanet.org/certification/" },
+        { "name": "LEED Accredited Professional", "provider": "U.S. Green Building Council / GBCI", "url": "https://www.usgbc.org/credentials/leed-ap" }
       ],
       "mastersPrograms": [
         { "name": "M.S. Civil Engineering (Structural)", "schools": ["UC Berkeley", "Georgia Tech", "University of Illinois Urbana-Champaign"] },
@@ -106,11 +106,11 @@
       ],
       "companies": ["Intel", "Texas Instruments", "NVIDIA", "Qualcomm", "Tesla", "Raytheon (RTX)", "Lockheed Martin", "Northrop Grumman", "Schneider Electric", "Eaton"],
       "certifications": [
-        { "name": "Professional Engineer (PE) License", "provider": "NSPE / state licensing boards" },
-        { "name": "Certified Energy Manager", "provider": "Association of Energy Engineers" },
-        { "name": "NABCEP PV Installation Professional", "provider": "North American Board of Certified Energy Practitioners" },
-        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" },
-        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" }
+        { "name": "Professional Engineer (PE) License", "provider": "NSPE / state licensing boards", "url": "https://www.nspe.org/resources/licensure" },
+        { "name": "Certified Energy Manager", "provider": "Association of Energy Engineers", "url": "https://www.aeecenter.org/certifications/cem-certified-energy-manager/" },
+        { "name": "NABCEP PV Installation Professional", "provider": "North American Board of Certified Energy Practitioners", "url": "https://www.nabcep.org/certifications/nabcep-board-certifications/" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-black-belt" }
       ],
       "mastersPrograms": [
         { "name": "MS Electrical Engineering – Power Electronics/Energy Systems", "schools": ["Georgia Institute of Technology", "UT Dallas", "NJIT", "UMass Lowell"] },
@@ -137,11 +137,11 @@
       ],
       "companies": ["Google", "Microsoft", "Amazon", "Meta", "Apple", "Netflix", "Stripe", "NVIDIA", "Salesforce", "Atlassian"],
       "certifications": [
-        { "name": "AWS Certified Solutions Architect (Associate/Professional)", "provider": "Amazon Web Services" },
-        { "name": "Microsoft Certified: Azure Solutions Architect Expert", "provider": "Microsoft" },
-        { "name": "Google Cloud Professional Cloud Architect", "provider": "Google Cloud" },
-        { "name": "Certified Kubernetes Administrator/Application Developer (CKA/CKAD)", "provider": "Cloud Native Computing Foundation" },
-        { "name": "Certified ScrumMaster (CSM)", "provider": "Scrum Alliance" }
+        { "name": "AWS Certified Solutions Architect (Associate/Professional)", "provider": "Amazon Web Services", "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/" },
+        { "name": "Microsoft Certified: Azure Solutions Architect Expert", "provider": "Microsoft", "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/" },
+        { "name": "Google Cloud Professional Cloud Architect", "provider": "Google Cloud", "url": "https://cloud.google.com/learn/certification/cloud-architect" },
+        { "name": "Certified Kubernetes Administrator/Application Developer (CKA/CKAD)", "provider": "Cloud Native Computing Foundation", "url": "https://www.cncf.io/training/certification/cka/" },
+        { "name": "Certified ScrumMaster (CSM)", "provider": "Scrum Alliance", "url": "https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" }
       ],
       "mastersPrograms": [
         { "name": "Online Master of Science in Computer Science (OMSCS)", "schools": ["Georgia Institute of Technology"] },
@@ -169,11 +169,11 @@
       ],
       "companies": ["ExxonMobil", "Dow", "Shell", "BASF", "Chevron Phillips Chemical", "DuPont", "Evonik", "LyondellBasell", "Eastman Chemical", "Air Products"],
       "certifications": [
-        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state boards" },
-        { "name": "Certified Process Safety Professional (CCPSC)", "provider": "AIChE Center for Chemical Process Safety (CCPS)" },
-        { "name": "Certified Automation Professional (CAP)", "provider": "International Society of Automation (ISA)" },
-        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" },
-        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+        { "name": "Professional Engineer (PE) License", "provider": "NCEES / state boards", "url": "https://ncees.org/engineering/pe/" },
+        { "name": "Certified Process Safety Professional (CCPSC)", "provider": "AIChE Center for Chemical Process Safety (CCPS)", "url": "https://www.aiche.org/ccps/resources/certified-process-safety-professional" },
+        { "name": "Certified Automation Professional (CAP)", "provider": "International Society of Automation (ISA)", "url": "https://www.isa.org/certification/cap" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-black-belt" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" }
       ],
       "mastersPrograms": [
         { "name": "M.S. Chemical Engineering", "schools": ["Stanford University", "MIT", "UC Berkeley"] },
@@ -201,11 +201,11 @@
       ],
       "companies": ["Google", "Meta", "Amazon", "Microsoft", "Netflix", "Airbnb", "Stripe", "Capital One", "IBM", "DoorDash"],
       "certifications": [
-        { "name": "IBM Data Science Professional Certificate", "provider": "IBM / Coursera" },
-        { "name": "Google Data Analytics Professional Certificate", "provider": "Google" },
-        { "name": "AWS Certified Machine Learning Engineer – Associate", "provider": "Amazon Web Services" },
-        { "name": "SAS Certified Data Scientist", "provider": "SAS Institute" },
-        { "name": "Microsoft Certified: Azure Data Scientist Associate", "provider": "Microsoft" }
+        { "name": "IBM Data Science Professional Certificate", "provider": "IBM / Coursera", "url": "https://www.coursera.org/professional-certificates/ibm-data-science" },
+        { "name": "Google Data Analytics Professional Certificate", "provider": "Google", "url": "https://grow.google/certificates/data-analytics/" },
+        { "name": "AWS Certified Machine Learning Engineer – Associate", "provider": "Amazon Web Services", "url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/" },
+        { "name": "SAS Certified Data Scientist", "provider": "SAS Institute", "url": "https://www.sas.com/en_us/certification/credentials/advanced-analytics/data-scientist.html" },
+        { "name": "Microsoft Certified: Azure Data Scientist Associate", "provider": "Microsoft", "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-scientist/" }
       ],
       "mastersPrograms": [
         { "name": "Master of Science in Analytics (Online)", "schools": ["Georgia Institute of Technology"] },
@@ -233,10 +233,10 @@
       ],
       "companies": ["Medtronic", "Johnson & Johnson MedTech", "Boston Scientific", "Abbott", "Stryker", "Siemens Healthineers", "GE HealthCare", "Philips Healthcare", "ResMed", "Becton Dickinson"],
       "certifications": [
-        { "name": "Certified Quality Engineer (CQE)", "provider": "ASQ" },
-        { "name": "Regulatory Affairs Certification (RAC)", "provider": "Regulatory Affairs Professionals Society (RAPS)" },
-        { "name": "Certified Biomedical Equipment Technician (CBET)", "provider": "AAMI" },
-        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ" }
+        { "name": "Certified Quality Engineer (CQE)", "provider": "ASQ", "url": "https://asq.org/cert/quality-engineer" },
+        { "name": "Regulatory Affairs Certification (RAC)", "provider": "Regulatory Affairs Professionals Society (RAPS)", "url": "https://www.raps.org/certify-advance/credentials/rac.html" },
+        { "name": "Certified Biomedical Equipment Technician (CBET)", "provider": "AAMI", "url": "https://aami.org/certifications/cbet/" },
+        { "name": "Six Sigma Green/Black Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-black-belt" }
       ],
       "mastersPrograms": [
         { "name": "Master of Engineering in MedTech Design", "schools": ["Duke University"] },
@@ -264,10 +264,10 @@
       ],
       "companies": ["Pfizer", "Merck", "Genentech (Roche)", "Amgen", "Regeneron", "Vertex Pharmaceuticals", "Moderna", "Novartis", "Bristol Myers Squibb", "Gilead Sciences"],
       "certifications": [
-        { "name": "Regulatory Affairs Certification – Drugs (RAC-Drugs)", "provider": "Regulatory Affairs Professionals Society (RAPS)" },
-        { "name": "Six Sigma Green Belt", "provider": "ASQ" },
-        { "name": "Certified Quality Auditor (CQA)", "provider": "ASQ" },
-        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+        { "name": "Regulatory Affairs Certification – Drugs (RAC-Drugs)", "provider": "Regulatory Affairs Professionals Society (RAPS)", "url": "https://www.raps.org/certify-advance/credentials/rac.html" },
+        { "name": "Six Sigma Green Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-green-belt" },
+        { "name": "Certified Quality Auditor (CQA)", "provider": "ASQ", "url": "https://asq.org/cert/quality-auditor" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" }
       ],
       "mastersPrograms": [
         { "name": "MS in Biotechnology", "schools": ["Johns Hopkins University", "University of Pennsylvania", "Northwestern University"] },
@@ -294,11 +294,11 @@
       ],
       "companies": ["CDC", "NYC Department of Health and Mental Hygiene", "California Department of Public Health", "Kaiser Permanente", "IHME (Institute for Health Metrics and Evaluation)", "WHO", "Mathematica", "RTI International", "PATH", "American Cancer Society"],
       "certifications": [
-        { "name": "Certified in Public Health (CPH)", "provider": "National Board of Public Health Examiners" },
-        { "name": "Certified in Public Health Essentials (CPHE)", "provider": "National Board of Public Health Examiners" },
-        { "name": "Certified in Disease Intervention (CDI)", "provider": "National Board of Public Health Examiners" },
-        { "name": "Certified Health Education Specialist (CHES)", "provider": "National Commission for Health Education Credentialing" },
-        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute" }
+        { "name": "Certified in Public Health (CPH)", "provider": "National Board of Public Health Examiners", "url": "https://www.nbphe.org/certified-in-public-health/" },
+        { "name": "Certified in Public Health Essentials (CPHE)", "provider": "National Board of Public Health Examiners", "url": "https://www.nbphe.org/certified-in-public-health-essentials/" },
+        { "name": "Certified in Disease Intervention (CDI)", "provider": "National Board of Public Health Examiners", "url": "https://www.nbphe.org/certified-in-disease-intervention/" },
+        { "name": "Certified Health Education Specialist (CHES)", "provider": "National Commission for Health Education Credentialing", "url": "https://www.nchec.org/ches-exam" },
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" }
       ],
       "mastersPrograms": [
         { "name": "Master of Public Health (MPH), Epidemiology concentration", "schools": ["Johns Hopkins Bloomberg School of Public Health", "Harvard T.H. Chan School of Public Health", "Columbia Mailman School of Public Health", "Emory Rollins School of Public Health"] },
@@ -311,6 +311,65 @@
       "media": [
         { "type": "youtube", "title": "Public Health Careers: Epidemiologist, Part 1", "url": "https://www.youtube.com/watch?v=tYx-fO5hMA4", "description": "Official CDC channel video in which a CDC epidemiologist describes his real day-to-day work studying how diseases affect populations." },
         { "type": "podcast", "title": "Public Health Epidemiology Conversations", "url": "https://podcasts.apple.com/us/podcast/public-health-epidemiology-conversations/id1279064696", "description": "An epidemiologist-hosted podcast episode covering real emergency-preparedness epidemiology work in a state health department." }
+      ]
+    },
+    {
+      "id": "materials-science-engineering",
+      "name": "Materials Science and Engineering",
+      "summary": "Materials scientists and engineers select, develop, and test the metals, polymers, ceramics, composites, and semiconductors that everything else gets built from — work that spans aerospace, electronics, energy, and consumer products.",
+      "pathway": [
+        { "level": 1, "title": "Materials Engineer I / Materials & Process Engineer", "yearRange": "0-2", "description": "Works under a senior engineer's supervision running material characterization (SEM, XRD, tensile/hardness testing), supporting failure analyses, and documenting process specifications for a single material or component family." },
+        { "level": 2, "title": "Materials Engineer II / Process Engineer II", "yearRange": "2-4", "description": "Owns material selection and qualification for a product line with reduced oversight, leads failure-analysis investigations independently, and works directly with suppliers on certificates of conformance and process control." },
+        { "level": 3, "title": "Senior Materials Engineer", "yearRange": "4-7", "description": "Leads material-selection and qualification programs across a product or platform, becomes the go-to subject-matter expert for a materials class (metals, polymers, composites, or semiconductors), and mentors junior engineers." },
+        { "level": 4, "title": "Principal Materials Engineer / Materials Engineering Manager", "yearRange": "7+", "description": "Sets material standards and specifications across programs, manages a team or serves as technical authority for the organization, and represents materials engineering to customers and regulators (FAA, FDA, or similar)." }
+      ],
+      "companies": ["Intel", "Applied Materials", "3M", "DuPont", "Corning", "Boeing", "GE Aerospace", "Tesla", "W. L. Gore & Associates", "Micron Technology"],
+      "certifications": [
+        { "name": "Professional Engineer (PE) License — Metallurgical & Materials", "provider": "NCEES / state licensing boards", "url": "https://ncees.org/engineering/pe/" },
+        { "name": "Six Sigma Green Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-green-belt" },
+        { "name": "Certified Quality Engineer (CQE)", "provider": "ASQ", "url": "https://asq.org/cert/quality-engineer" },
+        { "name": "Coating Inspector Program (CIP)", "provider": "AMPP (Association for Materials Protection and Performance)", "url": "https://www.ampp.org/education/education-resources/courses-by-program/coating-inspector-program" },
+        { "name": "Certified Welding Engineer (CWEng)", "provider": "American Welding Society", "url": "https://www.aws.org/certification-and-education/professional-certification/certified-welding-engineer/" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS in Materials Science and Engineering", "schools": ["MIT", "Stanford", "UC Berkeley", "Georgia Tech", "Northwestern"] },
+        { "name": "MS in Metallurgical Engineering", "schools": ["Colorado School of Mines", "University of Utah", "Missouri S&T"] },
+        { "name": "MS in Polymer Science and Engineering", "schools": ["UMass Amherst", "Case Western Reserve", "Georgia Tech"] }
+      ],
+      "conferences": ["MS&T (Materials Science & Technology) Annual Meeting", "TMS Annual Meeting & Exhibition", "MRS Spring/Fall Meeting", "SAMPE Conference & Exhibition (composites/advanced materials)"],
+      "organizations": ["ASM International", "TMS (The Minerals, Metals & Materials Society)", "MRS (Materials Research Society)", "ACerS (American Ceramic Society)", "SAMPE (Society for the Advancement of Material and Process Engineering)"],
+      "media": [
+        { "type": "youtube", "title": "Day in the Life: Materials Engineer", "url": "https://www.youtube.com/watch?v=LzaOV9jeaco", "description": "A materials engineer walks through a real workday, from lab testing to team meetings." },
+        { "type": "podcast", "title": "Materialism: A Materials Science Podcast", "url": "https://podcasts.apple.com/us/podcast/materialism-a-materials-science-podcast/id1448663986", "description": "Hosted by two materials scientists, covering cutting-edge materials, the history of everyday materials, and how new materials get commercialized." }
+      ]
+    },
+    {
+      "id": "project-management",
+      "name": "Project Management",
+      "summary": "Project managers plan, coordinate, and deliver technical projects on time and on budget. This role exists across every STEM industry — software, construction, aerospace, pharma, energy — rather than belonging to any single engineering discipline.",
+      "pathway": [
+        { "level": 1, "title": "Associate Project Manager / Project Coordinator", "yearRange": "0-2", "description": "Supports a project manager by tracking tasks, schedules, and status reports; learns project-management fundamentals and tools (Jira, MS Project, Smartsheet) while shadowing senior PMs on real projects." },
+        { "level": 2, "title": "Project Manager", "yearRange": "2-4", "description": "Owns a small-to-medium project end to end — scope, schedule, budget, and risk register — and coordinates directly with engineering or technical leads, vendors, and stakeholders." },
+        { "level": 3, "title": "Senior Project Manager / Program Manager", "yearRange": "4-7", "description": "Manages multiple related projects or a full program, owns budget and stakeholder relationships, mentors junior PMs, and typically pursues PMP certification at this stage." },
+        { "level": 4, "title": "Director of Program Management / PMO Lead", "yearRange": "7+", "description": "Sets project-management standards and process across an organization (often leading a PMO — project management office), manages a team of PMs, and reports program health directly to executive leadership." }
+      ],
+      "companies": ["Boeing", "Lockheed Martin", "Google", "Amazon", "Johnson & Johnson", "Pfizer", "Bechtel", "Turner Construction", "Intel", "Accenture"],
+      "certifications": [
+        { "name": "Project Management Professional (PMP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/project-management-pmp" },
+        { "name": "Certified Associate in Project Management (CAPM)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/certified-associate-capm" },
+        { "name": "Certified ScrumMaster (CSM)", "provider": "Scrum Alliance", "url": "https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster" },
+        { "name": "PMI Agile Certified Practitioner (PMI-ACP)", "provider": "Project Management Institute", "url": "https://www.pmi.org/certifications/agile-acp" },
+        { "name": "Six Sigma Green Belt", "provider": "ASQ", "url": "https://asq.org/cert/six-sigma-green-belt" }
+      ],
+      "mastersPrograms": [
+        { "name": "MS in Engineering Management", "schools": ["Northwestern (McCormick)", "Stanford", "Duke", "UC Berkeley (Fung Institute)"] },
+        { "name": "MS in Project Management", "schools": ["Boston University", "George Washington University", "Northeastern"] }
+      ],
+      "conferences": ["PMI Global Summit", "Agile Alliance's Agile20xx Conference", "Gartner Program & Portfolio Management Summit"],
+      "organizations": ["PMI (Project Management Institute)", "Scrum Alliance", "Agile Alliance", "IPMA (International Project Management Association)", "APM (Association for Project Management)"],
+      "media": [
+        { "type": "youtube", "title": "A Day in the Life of a Program Manager | Google Project Management Certificate", "url": "https://www.youtube.com/watch?v=Dhc1bd2StTM", "description": "A senior engineering program manager at Google walks through a real day managing technical projects." },
+        { "type": "podcast", "title": "Manage This — The Project Management Podcast", "url": "https://www.velociteach.com/manage-this-podcast/", "description": "Interview-format show featuring project managers and program leaders discussing real project challenges and PMP prep." }
       ]
     }
   ],
@@ -341,7 +400,7 @@
       "summary": "One of the broadest engineering majors, covering how physical systems move, generate power, and get manufactured — from engines to robots to consumer products.",
       "typicalCourses": ["Statics", "Dynamics", "Thermodynamics", "Fluid Mechanics", "Materials Science", "Mechanics of Materials", "Machine Design", "Heat Transfer"],
       "whyChooseIt": "Good for students who like hands-on building and want maximum flexibility after graduation — mechanical engineers work across nearly every industry.",
-      "leadsToFields": ["mechanical-engineering"]
+      "leadsToFields": ["mechanical-engineering", "project-management"]
     },
     {
       "id": "civil-engineering-major",
@@ -349,7 +408,7 @@
       "summary": "Civil engineering trains students to design and build the infrastructure society depends on: roads, bridges, water systems, and buildings.",
       "typicalCourses": ["Statics", "Structural Analysis", "Geotechnical Engineering (Soil Mechanics)", "Fluid Mechanics & Hydraulics", "Construction Materials", "Surveying", "Transportation Engineering"],
       "whyChooseIt": "Appeals to students who want to see tangible, lasting results in the world around them and who are interested in a clear path toward professional licensure (PE).",
-      "leadsToFields": ["civil-engineering"]
+      "leadsToFields": ["civil-engineering", "project-management"]
     },
     {
       "id": "electrical-engineering-major",
@@ -357,7 +416,7 @@
       "summary": "Electrical engineering covers the systems that generate, distribute, and control electricity and signals — from microchips to the power grid.",
       "typicalCourses": ["Circuit Analysis", "Electromagnetics", "Digital Logic Design", "Signals & Systems", "Semiconductor Devices", "Power Systems", "Control Systems"],
       "whyChooseIt": "A strong choice for students drawn to both hardware and theory, with career paths spanning chips, power, robotics, and communications.",
-      "leadsToFields": ["electrical-engineering"]
+      "leadsToFields": ["electrical-engineering", "project-management"]
     },
     {
       "id": "computer-science-major",
@@ -365,7 +424,7 @@
       "summary": "Computer science teaches how to design, build, and reason about software systems — the algorithms, data structures, and infrastructure behind modern technology.",
       "typicalCourses": ["Data Structures & Algorithms", "Discrete Mathematics", "Computer Architecture", "Operating Systems", "Databases", "Software Engineering", "Computer Networks"],
       "whyChooseIt": "Great for students who enjoy problem-solving and building things quickly, with some of the widest range of industries hiring straight out of undergrad.",
-      "leadsToFields": ["computer-science-software-engineering"]
+      "leadsToFields": ["computer-science-software-engineering", "project-management"]
     },
     {
       "id": "chemical-engineering-major",
@@ -373,7 +432,7 @@
       "summary": "Chemical engineering applies chemistry, physics, and math to design the processes that turn raw materials into fuels, chemicals, and pharmaceuticals at scale.",
       "typicalCourses": ["General & Organic Chemistry", "Thermodynamics", "Fluid Mechanics", "Mass & Heat Transfer", "Chemical Reaction Engineering", "Process Design & Control", "Separations"],
       "whyChooseIt": "Fits students who like chemistry but want to work on large-scale industrial processes rather than lab bench research alone.",
-      "leadsToFields": ["chemical-engineering"]
+      "leadsToFields": ["chemical-engineering", "project-management"]
     },
     {
       "id": "statistics-data-science-major",
@@ -389,7 +448,7 @@
       "summary": "Biomedical engineering applies engineering principles to the human body, training students to design medical devices, diagnostics, and health technologies.",
       "typicalCourses": ["Biology & Human Physiology", "Circuits", "Biomechanics", "Biomaterials", "Medical Instrumentation", "Biosignal Processing", "Medical Device Design"],
       "whyChooseIt": "Ideal for students who want an engineering career with a direct, tangible connection to healthcare and human impact.",
-      "leadsToFields": ["biomedical-engineering"]
+      "leadsToFields": ["biomedical-engineering", "project-management"]
     },
     {
       "id": "biology-biochemistry-major",
@@ -406,6 +465,14 @@
       "typicalCourses": ["Biostatistics", "Epidemiology", "Environmental Health", "Health Policy & Management", "Social & Behavioral Health Sciences", "Global Health", "Research Methods"],
       "whyChooseIt": "Good for students who care about health but want to work on prevention and systems-level impact rather than clinical practice.",
       "leadsToFields": ["public-health-epidemiology"]
+    },
+    {
+      "id": "materials-science-engineering-major",
+      "name": "Materials Science and Engineering",
+      "summary": "Materials science and engineering studies the relationship between a material's structure, properties, and processing — the discipline behind choosing (or inventing) the right metal, polymer, ceramic, or composite for a job.",
+      "typicalCourses": ["Chemistry I-II", "Thermodynamics of Materials", "Structure of Materials (Crystallography)", "Mechanical Behavior of Materials", "Materials Characterization (SEM/XRD)", "Polymer Science", "Electronic & Semiconductor Materials"],
+      "whyChooseIt": "A good fit for students who like chemistry and physics but want to see it applied directly to real products — from aircraft alloys to phone screens to medical implants.",
+      "leadsToFields": ["materials-science-engineering"]
     }
   ],
   "resources": [

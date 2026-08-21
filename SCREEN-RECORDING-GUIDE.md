@@ -6,7 +6,7 @@ tells Shikhar exactly what to record manually, in order, so the real video can b
 quickly with any normal screen recorder (Windows' built-in Xbox Game Bar `Win+G`, Zoom's
 local recording, Loom, OBS, etc.).
 
-**Target length: 4-6 minutes.** This is a content-editing walkthrough for Ashley, not a
+**Target length: 5-7 minutes.** This is a content-editing walkthrough for Ashley, not a
 programming tutorial — keep it to the exact steps below and resist the urge to explain how
 the JavaScript works.
 
@@ -14,7 +14,7 @@ the JavaScript works.
 
 - Have the repo open in a code editor (VS Code is fine) at `stem-with-ashley/`.
 - Have a terminal ready in the same folder.
-- Have a browser tab ready, but don't start the local server until step 5 below.
+- Have a browser tab ready, but don't start the local server until step 6 below.
 - Close anything unrelated (other tabs, other apps, notifications) — this is what Ashley
   will actually see, so keep it clean.
 - Decide your one example edit ahead of time so you don't improvise on camera. Suggested:
@@ -68,7 +68,20 @@ on camera (don't paste) so Ashley can see the process, not just the result:
   `data/README.md` explains how to check it on jsonlint.com."
 - No need to demonstrate jsonlint on camera unless you want to.
 
-### 5. Run the app locally and show the change (60-90 sec)
+### 5. Show the Content Helper as the easier alternative (45-60 sec)
+
+- Open `admin/index.html` in the browser (or `/admin/` on the live site).
+- Pick "Certification (for an existing field)" from the dropdown, pick a field, and
+  fill in a name/provider/URL to show how it generates a ready-to-paste JSON block.
+- Say: "If typing JSON by hand feels risky, this page builds the block for you — you
+  still copy-paste it into `roadmap-data.json` yourself, but you don't have to type
+  any punctuation."
+- This is also the moment to show how a **certification link** gets added or changed:
+  point out the `url` field is what makes the certification name clickable on the live
+  site, opening the real provider's page in a new tab — always test that URL in a
+  browser first.
+
+### 6. Run the app locally and show the change (60-90 sec)
 
 - In the terminal: `python -m http.server 8000` (or your usual local-server command).
 - Open `http://localhost:8000/#/resources` in the browser.
@@ -77,33 +90,48 @@ on camera (don't paste) so Ashley can see the process, not just the result:
 - Delete the example entry now (on camera or just mention you're cleaning it up after),
   so it never gets committed for real.
 
-### 6. Explain repeatability (30 sec)
+### 7. Explain repeatability (30 sec)
 
 - Say plainly: "Adding a new field, a new major, a new podcast link, or another resource
   is the exact same process — copy an existing block in `roadmap-data.json`, edit the
   text between the quotes, save, and push to GitHub. Vercel handles the rest automatically."
 
-### 7. Show where the logo lives (15-20 sec)
+### 8. Show where the logo lives (15-20 sec)
 
 - Briefly open the `assets/` folder and point at `logo.jpeg`.
 - Say: "This is the real logo file. If Ashley ever gets an updated version from the design
   team, it just replaces this file — same filename, same folder — and it updates
   everywhere the logo appears (header and browser tab icon)."
 
-### 8. Show where Job Finder sample data lives (20-30 sec)
+### 9. Edit a job listing (30-45 sec)
 
-- Open `jobs/jobs-data.js`.
-- Point at the comment at the top of the file and say: "These are sample job listings,
-  clearly marked as fake. If a real job feed gets connected later, this is the file that
-  changes — the comment at the top already notes USAJOBS.gov's free API as one realistic
-  option. This is more of a developer task than a content edit, so it's here mainly so
-  Ashley knows where it lives, not something she's expected to edit herself."
+- Open `jobs/jobs-data.js` and point at the comment at the top: "These are sample job
+  listings, clearly marked as fake." Show one listing's fields (title, company, field,
+  experience level, location, description).
+- Edit one value live (e.g. change a location or description) to show it's just plain
+  text in an array, the same shape as the "Job Listing" option in the Content Helper.
+- Mention: "If a real job feed gets connected later, this file is what changes — the
+  comment at the top already notes USAJOBS.gov's free API as one realistic option.
+  That part is more of a developer task, so it's here mainly so Ashley knows where it
+  lives."
 
-### 9. Close (10-15 sec)
+### 10. Save, commit, push, and verify the live site (45-60 sec)
 
-- One sentence wrap-up: "That's the whole content-editing loop — one file, plain-text
-  edits, and Vercel does the rest. Anything beyond that (new features, design changes) is
-  a message to Shikhar."
+- Save all edited files (`Ctrl+S`).
+- In the terminal: `git add -A`, then `git commit -m "Update career content"`, then
+  `git push`.
+- Say: "That push is the trigger — GitHub notifies Vercel automatically, and Vercel
+  rebuilds and republishes the live site, usually within a minute or two. No separate
+  deploy step, no dashboard click required."
+- Open `https://stem-with-ashley.vercel.app/` in the browser and refresh to show the
+  live site reflecting the change (or, if timing makes that awkward on camera, show
+  the Vercel dashboard's "Deployments" tab going from "Building" to "Ready").
+
+### 11. Close (10-15 sec)
+
+- One sentence wrap-up: "That's the whole content-editing loop — one file (or the
+  Content Helper form), plain-text edits, push to GitHub, and Vercel does the rest.
+  Anything beyond that (new features, design changes) is a message to Shikhar."
 
 ## After recording
 

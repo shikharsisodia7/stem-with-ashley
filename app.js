@@ -1,5 +1,6 @@
-// Stem With Ashley — app logic.
+// Stem with Ashley Career Resources — app logic.
 // Reads all content from data/roadmap-data.json. No build step, no framework.
+// esc/safeGetJSON/safeSetJSON come from utils.js (loaded first in index.html).
 
 const DATA_URL = "data/roadmap-data.json";
 const BOOKMARK_KEY = "stemRoadmapBookmarks";
@@ -7,24 +8,15 @@ const BOOKMARK_KEY = "stemRoadmapBookmarks";
 let ROADMAP_DATA = null;
 let registry = {}; // id -> bookmark item, rebuilt on every render
 
-function esc(str) {
-  return String(str).replace(/[&<>"']/g, (c) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-  }[c]));
-}
-
 // ---------- Bookmarks (localStorage) ----------
 
 function getBookmarks() {
-  try {
-    return JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]");
-  } catch (e) {
-    return [];
-  }
+  const list = safeGetJSON(BOOKMARK_KEY, []);
+  return Array.isArray(list) ? list : [];
 }
 
 function saveBookmarks(list) {
-  localStorage.setItem(BOOKMARK_KEY, JSON.stringify(list));
+  safeSetJSON(BOOKMARK_KEY, list);
 }
 
 function isBookmarked(id) {
@@ -233,10 +225,13 @@ function renderField(fieldId) {
         label: c.name,
         detail: `Issued by ${c.provider}`,
       });
+      const nameHtml = c.url
+        ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a>`
+        : esc(c.name);
       return `
         <div class="item-row">
           <div class="item-text">
-            <div class="item-title">${esc(c.name)}</div>
+            <div class="item-title">${nameHtml}</div>
             <div class="item-sub">${esc(c.provider)}</div>
           </div>
           ${star}
@@ -425,6 +420,15 @@ function render() {
   } else if (hash === "/shortlist") {
     app.innerHTML = renderShortlist();
     updateNavActive("/shortlist");
+  } else if (hash.startsWith("/interview")) {
+    const step = hash === "/interview" ? 1 : parseInt(hash.slice("/interview/".length), 10) || 1;
+    app.innerHTML = renderInterview(step);
+    updateNavActive("/interview");
+    wireInterview(app, step);
+  } else if (hash === "/worksheet") {
+    app.innerHTML = renderWorksheet();
+    updateNavActive("/worksheet");
+    wireWorksheet(app);
   } else {
     app.innerHTML = `<p>Page not found. <a href="#/">Go home</a>.</p>`;
     updateNavActive("");

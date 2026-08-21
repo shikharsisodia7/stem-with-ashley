@@ -1,10 +1,11 @@
-# Stem With Ashley — Five-Year STEM Career Roadmap
+# Stem with Ashley Career Resources — Five-Year STEM Career Roadmap
 
 A self-contained web app for recent college graduates entering STEM careers. Pick a
 field, see a realistic five-year path from entry-level to senior roles, browse
-certifications/schools/conferences/organizations, explore developmental skills, and
-bookmark anything of interest into a printable shortlist for a career-coach
-conversation.
+certifications (with links to the real provider page)/schools/conferences/organizations,
+explore developmental skills, work through a step-by-step Interview Prep guide, turn
+your own notes into a printable Worksheet Generator practice sheet, and bookmark
+anything of interest into a printable shortlist for a career-coach conversation.
 
 Live site: deployed on Vercel as project `stem-with-ashley`.
 
@@ -69,9 +70,26 @@ The app is a single-page hash-router (`index.html` + `app.js`). Current routes:
 - `#/major/<id>` — Major detail (typical courses, why students choose it, links into
   the STEM field(s) it leads to)
 - `#/skills` — Developmental skills
+- `#/interview` and `#/interview/1` through `#/interview/7` — Interview Prep: a
+  step-by-step guide covering interview stages, the STAR method (with an interactive
+  answer builder), common questions, before/during/after-interview guidance, and a
+  final readiness check. Progress is saved to `localStorage` only.
+- `#/worksheet` — Worksheet Generator: paste class notes or a summary and get a
+  printable practice worksheet (fill-in-the-blank, key terms, short answer, optional
+  answer key) generated entirely in the browser — nothing is uploaded anywhere. The
+  text-transformation logic lives in `worksheet-generator.js` (pure functions, unit
+  tested) separately from the DOM rendering in `worksheet.js`.
 - `#/resources` — General career-exploration resources, including the O*NET Interest
   Profiler quiz
 - `#/shortlist` — Bookmarked items, printable
+
+## Content Helper (`/admin/`)
+
+A local, no-login form-based tool that turns plain-text form fields into a correctly
+formatted JSON block for `data/roadmap-data.json` or `jobs/jobs-data.js` — so a
+non-technical editor doesn't have to type JSON by hand. It never saves, uploads, or
+publishes anything itself (no GitHub token, no backend); it just generates text to
+copy and paste. See `data/README.md` for how it fits into the editing workflow.
 
 ## Job Finder sub-app
 
@@ -91,11 +109,23 @@ don't need to change.
 ```
 stem-with-ashley/
   index.html              # page shell
-  styles.css               # all styling
+  styles.css               # all styling (incl. print styles for shortlist/worksheet)
   app.js                    # routing, rendering, bookmarking logic
+  utils.js                   # shared esc()/localStorage helpers
+  interview.js                # Interview Prep — step rendering + wiring
+  interview-star.js            # pure STAR-answer-combining logic (unit tested)
+  interview-star.test.js
+  worksheet.js                 # Worksheet Generator — UI rendering + wiring
+  worksheet-generator.js        # pure text-transformation logic (unit tested)
+  worksheet-generator.test.js
   data/
     roadmap-data.json       # ALL content — edit this to update the app
+    roadmap-data.test.js     # structural validation tests for the data file
     README.md                # editing guide for non-technical editors
+  admin/
+    index.html               # Content Helper — form-to-JSON generator (no backend)
+    admin.js
+    admin.css
   jobs/
     index.html               # standalone Job Finder sub-app (separate page)
     jobs-app.js               # UI wiring for the Job Finder
@@ -109,9 +139,21 @@ stem-with-ashley/
     superpowers/specs/       # original design spec for this project
 ```
 
+## Running the tests
+
+No install needed — these use Node's built-in test runner:
+
+```
+node --test data/roadmap-data.test.js interview-star.test.js worksheet-generator.test.js jobs/jobs-filter.test.js
+```
+
 ## Notes on scope
 
 This is a working prototype, not a finished product — built to be functional and
-useful now, and iterated on over time. Bookmarks are stored in each visitor's browser
-only (no accounts, no server-side storage), so they don't persist across devices or
-survive clearing browser data.
+useful now, and iterated on over time. Bookmarks and Interview Prep / Worksheet
+Generator progress are stored in each visitor's browser only (no accounts, no
+server-side storage), so none of it persists across devices or survives clearing
+browser data. The Worksheet Generator's fill-in-the-blank/key-term/short-answer logic
+is a heuristic (word-frequency and sentence-based), not an AI model — it's designed so
+an AI-backed version could later replace `worksheet-generator.js`'s `generateWorksheet()`
+function without touching any UI code.
