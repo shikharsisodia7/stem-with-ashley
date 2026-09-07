@@ -430,3 +430,200 @@ h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
   .worksheet-section { break-inside: avoid; }
   .interview-steps, .interview-footer { display: none !important; }
 }
+/* ---------- Interview Guide additions ---------- */
+
+.field-hint { color: var(--text-muted); font-size: 0.82rem; }
+.save-indicator {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  align-self: center;
+}
+.save-indicator.visible { opacity: 1; }
+
+/* STAR letters */
+.star-letters { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; }
+.star-letter-block {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+.star-letter-block h3 { margin: 0 0 0.35rem; }
+.star-letter-block ul { margin: 0; padding-left: 1.2rem; color: var(--text-muted); }
+.star-letter-block li { margin-bottom: 0.3rem; }
+.star-letter-badge {
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Tell Me About Yourself */
+.tmay-framework {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.tmay-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+}
+.tmay-card h3 { margin-top: 0; }
+.tmay-prompt { font-weight: 600; margin: 0.3rem 0 0.5rem; }
+.tmay-card ul { margin: 0; padding-left: 1.1rem; color: var(--text-muted); font-size: 0.9rem; }
+
+/* Question bank */
+.qb-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0.75rem; }
+.qb-tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+.qb-tab.active { border-color: var(--brand); color: var(--brand); background: #eef4ff; }
+.qb-tab-count { color: inherit; opacity: 0.75; font-weight: 400; }
+
+.qb-filters { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.25rem; }
+.qb-filters .form-field-inline { min-width: 180px; }
+.qb-count { margin: 0.25rem 0 0.75rem; }
+
+.qb-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(280px, 1.4fr);
+  gap: 1rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .qb-layout { grid-template-columns: 1fr; }
+}
+
+.qb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 34rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+@media (max-width: 860px) {
+  .qb-list { max-height: 20rem; }
+}
+
+.qb-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  width: 100%;
+}
+.qb-card:hover { border-color: var(--brand); }
+.qb-card.selected { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand) inset; }
+.qb-card-top { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.qb-card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.qb-card-icons { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+.qb-card-question { font-size: 0.92rem; line-height: 1.35; }
+.qb-practiced-check { color: #1c8a4b; font-weight: 700; }
+.qb-fav-star { font-size: 1.05rem; cursor: pointer; }
+
+.qb-badge-difficulty { text-transform: capitalize; }
+.qb-badge-introductory { background: #eafaf0; border-color: #b9e6c8; }
+.qb-badge-intermediate { background: #fff8e1; border-color: #f0dfa0; }
+.qb-badge-advanced { background: #fdeaea; border-color: #f3c1c1; }
+.qb-badge-star { background: #eef4ff; border-color: #cfe0fb; color: var(--brand-dark); }
+
+.qb-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+.qb-detail-header { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+.qb-tip-disclosure { margin: 0.5rem 0 1rem; }
+.qb-tip-disclosure summary { cursor: pointer; font-weight: 600; color: var(--brand); }
+.qb-tip-disclosure p { margin: 0.5rem 0 0; }
+.qb-tip-inline { margin: 0.5rem 0 1rem; }
+
+/* Video practice */
+.video-practice-panel { margin-top: 1rem; }
+.video-preview-wrap {
+  background: #10151c;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-width: 32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-preview-wrap.video-preview-empty { background: var(--bg); border: 1px dashed var(--border); }
+.video-preview-placeholder { color: var(--text-muted); font-size: 0.9rem; padding: 1rem; text-align: center; }
+.video-preview-el { width: 100%; height: 100%; object-fit: cover; background: #000; }
+.video-controls { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.video-practice-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.video-recording-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #b3261e;
+}
+.rec-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #d32f2f;
+  display: inline-block;
+  animation: rec-pulse 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rec-dot { animation: none; }
+}
+@keyframes rec-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.video-error {
+  background: #fdeaea;
+  border: 1px solid #f3c1c1;
+  border-radius: var(--radius);
+  padding: 0.6rem 0.9rem;
+  color: #7a1f1f;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .video-preview-wrap { max-width: 100%; }
+  .qb-filters { flex-direction: column; }
+  .qb-filters .form-field-inline { min-width: 0; width: 100%; }
+}
+
+@media print {
+  .qb-tabs, .qb-filters, .video-practice-panel, .video-controls { display: none !important; }
+}

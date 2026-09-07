@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { buildStarAnswer, starCompleteness } = require("./interview-star.js");
+const { buildStarAnswer, starCompleteness, formatStarForClipboard } = require("./interview-star.js");
 
 test("buildStarAnswer combines all four fields into one paragraph", () => {
   const answer = buildStarAnswer({
@@ -31,4 +31,23 @@ test("starCompleteness reports how many of the four fields are filled", () => {
     { filled: 4, total: 4, isComplete: true }
   );
   assert.deepEqual(starCompleteness({}), { filled: 0, total: 4, isComplete: false });
+});
+
+test("formatStarForClipboard labels each filled field on its own paragraph", () => {
+  const formatted = formatStarForClipboard({
+    situation: "Our sensor pipeline kept crashing.",
+    task: "I owned the ingestion module.",
+    action: "I profiled it and added caching.",
+    result: "Processing time dropped 70%.",
+  });
+  assert.ok(formatted.startsWith("Situation: Our sensor pipeline"));
+  assert.ok(formatted.includes("Task: I owned"));
+  assert.ok(formatted.includes("Action: I profiled"));
+  assert.ok(formatted.includes("Result: Processing time dropped 70%."));
+});
+
+test("formatStarForClipboard skips empty fields and handles a fully empty entry", () => {
+  assert.equal(formatStarForClipboard({ situation: "Only this." }), "Situation: Only this.");
+  assert.equal(formatStarForClipboard({}), "");
+  assert.equal(formatStarForClipboard(null), "");
 });

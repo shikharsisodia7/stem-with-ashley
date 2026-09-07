@@ -20,7 +20,23 @@
     return { filled: filled.length, total: fields.length, isComplete: filled.length === fields.length };
   }
 
-  const api = { buildStarAnswer, starCompleteness };
+  function formatStarForClipboard(entry) {
+    const labels = [
+      ["Situation", "situation"],
+      ["Task", "task"],
+      ["Action", "action"],
+      ["Result", "result"],
+    ];
+    return labels
+      .map(([label, key]) => {
+        const value = (entry && entry[key] ? String(entry[key]) : "").trim();
+        return value ? `${label}: ${value}` : "";
+      })
+      .filter(Boolean)
+      .join("\n\n");
+  }
+
+  const api = { buildStarAnswer, starCompleteness, formatStarForClipboard };
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = api;

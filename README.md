@@ -70,10 +70,16 @@ The app is a single-page hash-router (`index.html` + `app.js`). Current routes:
 - `#/major/<id>` — Major detail (typical courses, why students choose it, links into
   the STEM field(s) it leads to)
 - `#/skills` — Developmental skills
-- `#/interview` and `#/interview/1` through `#/interview/7` — Interview Prep: a
-  step-by-step guide covering interview stages, the STAR method (with an interactive
-  answer builder), common questions, before/during/after-interview guidance, and a
-  final readiness check. Progress is saved to `localStorage` only.
+- `#/interview` and `#/interview/1` through `#/interview/14` — the STEM Interview
+  Prep Guide: interview-process overview, a full STAR method tutorial with an
+  autosaving worksheet, a "Tell Me About Yourself" framework, a searchable
+  behavioral/situational/technical question bank (45/28/50 questions) with typed
+  practice per question, a technical/coding-interview prep roadmap, browser-native
+  video practice (camera + mic, nothing ever uploaded), self-review checklists,
+  questions to ask the interviewer, before/during/after checklists, and a final
+  readiness check. All content lives in `interview-data.js`; search/filter logic in
+  `interview-questions.js`; the recorder in `interview-recorder.js`. Progress is
+  saved to `localStorage` only.
 - `#/worksheet` — Worksheet Generator: paste class notes or a summary and get a
   printable practice worksheet (fill-in-the-blank, key terms, short answer, optional
   answer key) generated entirely in the browser — nothing is uploaded anywhere. The
@@ -112,7 +118,13 @@ stem-with-ashley/
   styles.css               # all styling (incl. print styles for shortlist/worksheet)
   app.js                    # routing, rendering, bookmarking logic
   utils.js                   # shared esc()/localStorage helpers
-  interview.js                # Interview Prep — step rendering + wiring
+  interview.js                # Interview Prep Guide — step rendering + wiring
+  interview-data.js            # ALL interview content — edit this to add/change questions
+  interview-data.test.js        # structural validation (counts, unique ids, required fields)
+  interview-questions.js         # pure question-bank search/filter logic (unit tested)
+  interview-questions.test.js
+  interview-recorder.js          # browser-native video practice recorder (unit-tested helpers)
+  interview-recorder.test.js
   interview-star.js            # pure STAR-answer-combining logic (unit tested)
   interview-star.test.js
   worksheet.js                 # Worksheet Generator — UI rendering + wiring
@@ -144,7 +156,7 @@ stem-with-ashley/
 No install needed — these use Node's built-in test runner:
 
 ```
-node --test data/roadmap-data.test.js interview-star.test.js worksheet-generator.test.js jobs/jobs-filter.test.js
+node --test data/roadmap-data.test.js interview-star.test.js interview-data.test.js interview-questions.test.js interview-recorder.test.js worksheet-generator.test.js jobs/jobs-filter.test.js
 ```
 
 ## Notes on scope
