@@ -415,20 +415,23 @@ function qbCard(q, state) {
   const selected = q.id === qbSelectedId;
   const classes = ["qb-card"];
   if (selected) classes.push("selected");
+  // Two sibling buttons (select + favorite), not one nested inside the other —
+  // nesting a <button> inside another <button> is invalid HTML and browsers
+  // handle it unpredictably. Same pattern as .field-card / .star-btn in app.js.
   return `
-    <button type="button" class="${classes.join(" ")}" data-qb-select="${esc(q.id)}" aria-current="${selected}">
-      <span class="qb-card-top">
-        <span class="qb-card-badges">
-          <span class="chip qb-badge-difficulty qb-badge-${esc(q.difficulty)}">${esc(q.difficulty)}</span>
-          <span class="chip qb-badge-sub">${esc(q.subcategory)}</span>
-        </span>
-        <span class="qb-card-icons">
+    <div class="${classes.join(" ")}">
+      <button type="button" class="qb-card-select" data-qb-select="${esc(q.id)}" aria-current="${selected}">
+        <span class="qb-card-top">
+          <span class="qb-card-badges">
+            <span class="chip qb-badge-difficulty qb-badge-${esc(q.difficulty)}">${esc(q.difficulty)}</span>
+            <span class="chip qb-badge-sub">${esc(q.subcategory)}</span>
+          </span>
           ${entry.practiced ? '<span class="qb-practiced-check" title="Practiced">✓</span>' : ""}
-          <span class="star-btn qb-fav-star${entry.favorite ? " active" : ""}" data-qb-favorite="${esc(q.id)}" role="button" tabindex="0" aria-pressed="${entry.favorite}" aria-label="${entry.favorite ? "Remove from favorites" : "Add to favorites"}">${entry.favorite ? "★" : "☆"}</span>
         </span>
-      </span>
-      <span class="qb-card-question">${esc(q.question)}</span>
-    </button>`;
+        <span class="qb-card-question">${esc(q.question)}</span>
+      </button>
+      <button type="button" class="star-btn qb-fav-star${entry.favorite ? " active" : ""}" data-qb-favorite="${esc(q.id)}" aria-pressed="${entry.favorite}" aria-label="${entry.favorite ? "Remove from favorites" : "Add to favorites"}">${entry.favorite ? "★" : "☆"}</button>
+    </div>`;
 }
 
 function renderQuestionBankBody() {
@@ -1057,22 +1060,22 @@ function wireQuestionBankStep(container) {
 
   function wireListInteractions() {
     body.querySelectorAll("[data-qb-select]").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        if (e.target.closest("[data-qb-favorite]")) return;
+      btn.addEventListener("click", () => {
         qbSelectedId = btn.dataset.qbSelect;
         const detail = body.querySelector("#qb-detail");
         const state = getInterviewState();
         const q = InterviewData.QUESTIONS.find((item) => item.id === qbSelectedId);
         detail.innerHTML = q ? renderQbDetail(q, state) : "";
         wireDetailInteractions();
-        body.querySelectorAll(".qb-card").forEach((card) => card.classList.toggle("selected", card.dataset.qbSelect === qbSelectedId));
+        body.querySelectorAll("[data-qb-select]").forEach((selectBtn) => {
+          const card = selectBtn.closest(".qb-card");
+          if (card) card.classList.toggle("selected", selectBtn.dataset.qbSelect === qbSelectedId);
+        });
       });
     });
 
     body.querySelectorAll("[data-qb-favorite]").forEach((star) => {
-      const toggle = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      star.addEventListener("click", () => {
         const id = star.dataset.qbFavorite;
         const state = getInterviewState();
         const entry = getAnswerEntry(state, id);
@@ -1080,10 +1083,6 @@ function wireQuestionBankStep(container) {
         state.answers[id] = entry;
         saveInterviewState(state);
         rerender();
-      };
-      star.addEventListener("click", toggle);
-      star.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") toggle(e);
       });
     });
   }
