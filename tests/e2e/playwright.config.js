@@ -8,6 +8,9 @@
 const { defineConfig, devices } = require("@playwright/test");
 
 const PORT = 4400;
+// E2E_BASE_URL=https://stem-with-ashley.vercel.app runs the @prod smoke checks against
+// production instead of a local server (no publishing happens in those).
+const REMOTE = process.env.E2E_BASE_URL || "";
 
 module.exports = defineConfig({
   testDir: ".",
@@ -17,15 +20,17 @@ module.exports = defineConfig({
   fullyParallel: false,
   reporter: [["list"]],
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: REMOTE || `http://localhost:${PORT}`,
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
   },
-  projects: [
-    { name: "desktop", use: { ...devices["Desktop Chrome"] }, grepInvert: /@mobile-only/ },
-    { name: "mobile", use: { ...devices["Pixel 7"] }, grep: /@mobile/ },
-  ],
-  webServer: {
+  projects: REMOTE
+    ? [{ name: "production", use: { ...devices["Desktop Chrome"] }, grep: /@prod/ }]
+    : [
+      { name: "desktop", use: { ...devices["Desktop Chrome"] }, grepInvert: /@mobile-only|@prod-only/ },
+      { name: "mobile", use: { ...devices["Pixel 7"] }, grep: /@mobile/, grepInvert: /@prod-only/ },
+    ],
+  webServer: REMOTE ? undefined : {
     command: "node ../../scripts/dev-server.js",
     url: `http://127.0.0.1:${PORT}/index.html`,
     reuseExistingServer: false,

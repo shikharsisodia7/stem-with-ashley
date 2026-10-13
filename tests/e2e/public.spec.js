@@ -1,7 +1,7 @@
 // Smoke tests for every public app — make sure the admin work broke nothing.
 const { test, expect } = require("@playwright/test");
 
-test("career roadmap: home → field page with pathway, certifications, links", async ({ page }) => {
+test("career roadmap: home → field page with pathway, certifications, links @prod", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Explore a STEM field" })).toBeVisible();
   expect(await page.locator(".field-card-link").count()).toBeGreaterThanOrEqual(12);
@@ -12,14 +12,14 @@ test("career roadmap: home → field page with pathway, certifications, links", 
   await expect(certLink).toHaveAttribute("href", /^https:\/\//);
 });
 
-test("majors explorer links majors to fields", async ({ page }) => {
+test("majors explorer links majors to fields @prod", async ({ page }) => {
   await page.goto("/#/majors");
   await expect(page.getByRole("heading", { name: "Explore a STEM major" })).toBeVisible();
   await page.getByRole("link", { name: /Aerospace Engineering/ }).first().click();
   await expect(page.getByRole("link", { name: "Aerospace Engineering" }).last()).toBeVisible();
 });
 
-test("skills and resources pages render", async ({ page }) => {
+test("skills and resources pages render @prod", async ({ page }) => {
   await page.goto("/#/skills");
   await expect(page.getByRole("heading", { name: "Developmental skills" })).toBeVisible();
   await expect(page.getByText("Toastmasters International")).toBeAttached();
@@ -28,7 +28,7 @@ test("skills and resources pages render", async ({ page }) => {
   await expect(page.getByRole("link", { name: /O\*NET Interest Profiler/ })).toBeVisible();
 });
 
-test("shortlist: bookmark an item, see it on My Shortlist", async ({ page }) => {
+test("shortlist: bookmark an item, see it on My Shortlist @prod", async ({ page }) => {
   await page.goto("/#/field/civil-engineering");
   await page.locator(".star-btn").first().click();
   await page.goto("/#/shortlist");
@@ -36,7 +36,7 @@ test("shortlist: bookmark an item, see it on My Shortlist", async ({ page }) => 
   await expect(page.locator(".star-btn.active").first()).toBeVisible();
 });
 
-test("interview prep: steps, STAR guide, question bank search", async ({ page }) => {
+test("interview prep: steps, STAR guide, question bank search @prod", async ({ page }) => {
   await page.goto("/#/interview");
   await expect(page.getByRole("heading", { name: "STEM Interview Prep Guide" })).toBeVisible();
   await page.goto("/#/interview/3");
@@ -48,7 +48,7 @@ test("interview prep: steps, STAR guide, question bank search", async ({ page })
   await expect(page.getByRole("heading", { name: /Video Practice/ })).toBeVisible();
 });
 
-test("worksheet generator creates a worksheet from notes", async ({ page }) => {
+test("worksheet generator creates a worksheet from notes @prod", async ({ page }) => {
   await page.goto("/#/worksheet");
   await page.locator("#worksheet-title").fill("Photosynthesis");
   await page.locator("#worksheet-notes").fill(
@@ -60,7 +60,7 @@ test("worksheet generator creates a worksheet from notes", async ({ page }) => {
   await expect(page.locator("#worksheet-print-btn")).toBeVisible();
 });
 
-test("job finder filters listings and labels samples", async ({ page }) => {
+test("job finder filters listings and labels samples @prod", async ({ page }) => {
   await page.goto("/jobs/");
   await expect(page.getByRole("heading", { name: "Find a STEM job" })).toBeVisible();
   await expect(page.locator("#jobs-count")).toHaveText("12 listings");
@@ -80,7 +80,7 @@ test("mobile navigation works without horizontal scrolling @mobile", async ({ pa
   expect(overflow).toBeLessThanOrEqual(1);
 });
 
-test("no console errors on public pages", async ({ page }) => {
+test("no console errors on public pages @prod", async ({ page }) => {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
