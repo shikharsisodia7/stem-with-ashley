@@ -7,3 +7,4 @@ docs/superpowers/
 .semgrep/
 .superpowers/
 .sonar/
+docs/*.md

@@ -101,11 +101,12 @@ commas). `node --test` catches mistakes.
 
 ## 3. Hosting & deployment
 
-- Vercel project **stem-with-ashley** (team `shikhar35sisodia35-6207s-projects`),
+- Vercel project **stem-with-ashley** (your personal Vercel team),
   framework "Other", no build command, Node 24.x. Production =
   `master` → <https://stem-with-ashley.vercel.app>.
 - Every dashboard publish is a commit authored as
-  `<email> (Admin Dashboard)`, which triggers a normal production deploy (one deploy
+  "STEM with Ashley Admin Dashboard" (never the editor's email, because this repo is
+  public; who published is recorded only in the private `cms_publications` table), which triggers a normal production deploy (one deploy
   per publish; the Vercel account limit is 100 deploys/day).
 - Preview deployments (other branches) have **no env vars**, so the admin API there
   is inert by design and can never publish to `master`.
@@ -165,7 +166,7 @@ order.
      until Ashley opens them) → **Minimum password length: 10**
 4. **Redeploy** so the functions see the new variables: `vercel --prod` from the repo
    (or Vercel → Deployments → ⋯ → Redeploy on the latest production deployment).
-5. **Your own admin account.** An account for `shikhar35sisodia35@gmail.com` with the
+5. **Your own admin account.** An account for your personal Gmail with the
    Administrator role already exists, with no password set. Open
    <https://stem-with-ashley.vercel.app/admin/> → **Forgot your password?** → enter
    your Gmail. The email arrives because Supabase's built-in mailer only delivers to

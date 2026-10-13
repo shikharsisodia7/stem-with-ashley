@@ -13,7 +13,7 @@ const { handler, send, readJson, HttpError } = require("./_lib/http");
 const { requireUser } = require("./_lib/auth");
 const { db, rateLimit } = require("./_lib/db");
 const github = require("./_lib/github");
-const { loadLive, dataOf, formatErrors, commitMessage } = require("./_lib/content");
+const { loadLive, dataOf, formatErrors, commitMessage, DASHBOARD_AUTHOR } = require("./_lib/content");
 
 module.exports = handler(["POST"], async (req, res) => {
   const { token, email } = await requireUser(req);
@@ -67,8 +67,8 @@ module.exports = handler(["POST"], async (req, res) => {
     commitSha = await gh.commitFiles({
       parentSha: live.headSha,
       files,
-      message: commitMessage("Content update", changes, email),
-      author: email ? { name: `${email} (Admin Dashboard)`, email } : undefined,
+      message: commitMessage("Content update", changes),
+      author: DASHBOARD_AUTHOR,
     });
   } catch (e) {
     await database.audit("publish", false, { reason: e.code || e.message, status: e.status || null });

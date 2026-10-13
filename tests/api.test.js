@@ -219,6 +219,10 @@ test("publishing several documents makes ONE atomic commit and clears the drafts
   const pub = sb.tables.cms_publications.at(-1);
   assert.equal(pub.commit_sha, r.data.commitSha);
   assert.equal(pub.published_by, "ashley@example.test");
+  // The repo is public: the commit must not reveal who published (that stays private).
+  const head = srv.fake.head();
+  assert.ok(!JSON.stringify(head.author).includes("ashley@example.test"), "author must not contain the editor email");
+  assert.ok(!head.message.includes("ashley@example.test"), "message must not contain the editor email");
 });
 
 test("published JS files still run in the browser and keep developer-maintained sections", async () => {

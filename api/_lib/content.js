@@ -37,12 +37,16 @@ function formatErrors(errors) {
   }));
 }
 
-function commitMessage(prefix, changes, email) {
+// The repository is public, so commits never carry the editor's name or email; the
+// private cms_publications table records who published each version.
+const DASHBOARD_AUTHOR = { name: "STEM with Ashley Admin Dashboard", email: "admin-dashboard@stem-with-ashley.invalid" };
+
+function commitMessage(prefix, changes) {
   const counts = {};
   changes.forEach((c) => { counts[c.type] = (counts[c.type] || 0) + 1; });
   const parts = Object.entries(counts).map(([t, n]) => `${n} ${t}`);
   const lines = changes.slice(0, 40).map((c) => `- ${c.type}: ${c.collection} / ${c.title}`);
-  return `${prefix}: ${parts.join(", ") || "content update"}\n\n${lines.join("\n")}${changes.length > 40 ? `\n- …and ${changes.length - 40} more` : ""}\n\nPublished from the admin dashboard by ${email}.`;
+  return `${prefix}: ${parts.join(", ") || "content update"}\n\n${lines.join("\n")}${changes.length > 40 ? `\n- …and ${changes.length - 40} more` : ""}\n\nPublished from the admin dashboard.`;
 }
 
-module.exports = { loadLive, dataOf, formatErrors, commitMessage };
+module.exports = { loadLive, dataOf, formatErrors, commitMessage, DASHBOARD_AUTHOR };

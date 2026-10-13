@@ -1,73 +1,52 @@
-# Handoff Email to Ashley (draft)
+# Handoff Email to Ashley
 
-**Status:** saved as an unsent draft in Shikhar's Gmail. **Not sent.** Before
-sending, Shikhar must:
+The finished email, with Ashley's personal one-time link filled in, is written to
+`OneDrive\Desktop\Email-to-Ashley.txt` on Shikhar's computer by
+`node scripts/finish-setup.js`. It is deliberately **not** kept in this repository
+(the repo is public, and the link is a personal sign-in credential).
 
-1. Finish the setup in `SHIKHAR-TECHNICAL-HANDOFF.md` §5 (GitHub token, Supabase key
-   and settings, redeploy).
-2. Create Ashley's invite link: dashboard → **Settings → Team access → Invite
-   someone** → her email → **Administrator**. Paste it where marked below. Send the
-   email soon after; the link works once and expires (24 h once the OTP expiry is
-   raised).
-3. Attach **STEM-with-Ashley-Walkthrough.mp4** (14.7 MB) and
-   **STEM-with-Ashley-Instructions.pdf** (2.8 MB) from
-   `OneDrive\Desktop\STEM-with-Ashley-Handoff\`. Both fit under Gmail's 25 MB limit.
-   Alternatively, upload the video to Drive and paste the link.
-4. Confirm which address Ashley wants to sign in with. The draft goes to
-   `stemwithashley@gmail.com`, the address she emails from. Her business card also
-   lists an Outlook address.
+Template (the link goes where marked):
 
 ---
 
-**To:** stemwithashley@gmail.com
-**Subject:** Your STEM with Ashley website: instructions, video, and your login
+**Subject:** Your STEM with Ashley website: login, instructions, and video
 
 Hi Ashley,
 
-As promised, here's everything you need to run and update the STEM with Ashley
-website on your own.
+Everything is ready for you to run and update the STEM with Ashley website on your
+own.
 
-**What's ready**
-All eight apps are live at https://stem-with-ashley.vercel.app: the Career Roadmap,
-College Majors, Developmental Skills, Interview Prep, the Worksheet Generator,
-Resources, the Job Finder, and My Shortlist.
+**Your website:** https://stem-with-ashley.vercel.app
+All eight apps are live: Career Roadmap, College Majors, Developmental Skills,
+Interview Prep, Worksheet Generator, Resources, Job Finder, and My Shortlist.
 
-You now also have your own private **admin dashboard** at
-https://stem-with-ashley.vercel.app/admin/. There you can edit career fields,
-majors, skills, resources, interview questions and checklists, and job listings using
-simple forms. No code, GitHub, or files.
+**Your admin dashboard:** https://stem-with-ashley.vercel.app/admin/
+This is where you update the content of every app with simple forms. There's no
+code, and you don't need GitHub or any files.
 
-**Your login**
-Your account is **stemwithashley@gmail.com**. To set your password, click this
-one-time link:
+**Setting up your login (one time)**
+1. Click your personal setup link: [ONE-TIME LINK]
+2. Choose a password (at least 10 characters).
+3. That's it. From then on, sign in at the dashboard link above with this email and
+   your password.
 
-[PASTE INVITE LINK HERE]
-
-Choose a password (at least 10 characters), and you're in. After that, sign in at the
-dashboard address above. The link works only once, so if it has expired, just let me
-know and I'll send a fresh one. I'm not sending a password by email, for security.
+The link works once and expires after 24 hours. If it has expired, just reply and
+I'll send a new one. For security, I'm not sending a password by email.
 
 **How updating works**
-Sign in → choose what to change → edit → **Save draft** → **Preview** → **Publish**.
-Drafts are private until you publish, and the website updates itself about a minute
-later. If you ever publish something by mistake, **Version History** lets you restore
-any earlier version with one click.
+Sign in → pick what to change → edit → **Save draft** → **Preview** → **Publish**.
+Drafts are private until you publish, and the website updates itself in about a
+minute. If you ever publish something by mistake, **Version History** restores any
+earlier version in one click.
 
-**Attached**
-- *STEM-with-Ashley-Walkthrough.mp4*: a 9-minute screen recording showing how to use
-  each app and how to update content, step by step.
-- *STEM-with-Ashley-Instructions.pdf*: the same instructions with pictures. They're
-  also always available from the **Help / Instructions** link in the dashboard.
+**Instructions and video**
+- Video walkthrough (9 min): https://stem-with-ashley.vercel.app/admin/media/walkthrough.mp4
+- Step-by-step guide with pictures: https://stem-with-ashley.vercel.app/admin/guide.html
+  (PDF: https://stem-with-ashley.vercel.app/admin/media/instructions.pdf)
+- Both are also inside the dashboard under **Help**.
 
-**Good to know**
-- Job listings are added by hand. Mark examples as "Sample", and only mark a listing
-  as real when you have a link to an open posting.
-- Layout or design changes, brand-new pages, and connecting a live job feed still
-  need me, so just email me.
-- If "Forgot your password?" doesn't send you an email, ask me and I'll send a reset
-  link right away.
-
-Happy to walk through it together on a call if that's helpful.
+Design changes, new pages, or connecting a live job feed still need me, so just
+email me.
 
 Best,
 Shikhar

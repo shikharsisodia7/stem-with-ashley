@@ -61,7 +61,9 @@ function saveVercel(name, value) {
   execFileSync("vercel", ["env", "add", name, "production"], { cwd: ROOT, input: value, stdio: ["pipe", "ignore", "pipe"], shell: true });
 }
 
-(async () => {
+module.exports = { CHECKS, LOCAL_ONLY, saveLocal, saveVercel, ps };
+
+if (require.main === module) (async () => {
   const name = process.argv[2];
   if (!CHECKS[name]) {
     console.error(`Usage: node scripts/setup-secret.js ${Object.keys(CHECKS).join("|")}`);
