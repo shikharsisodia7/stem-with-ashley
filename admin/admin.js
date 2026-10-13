@@ -1247,8 +1247,16 @@
         <p>Made a mistake? <a href="#/history">Version History</a> lets you restore any earlier version.</p>
       </section>
       <section class="card">
+        <h2>Video walkthrough (9 minutes)</h2>
+        <video class="help-video" controls preload="none" poster="media/walkthrough-poster.jpg" src="media/walkthrough.mp4">
+          Your browser can't play this video. <a href="media/walkthrough.mp4">Download it instead</a>.
+        </video>
+        <p class="muted-note">Shows every app, then how to edit, save, preview, publish, and restore. (The dashboard part was recorded on a practice copy.)</p>
+      </section>
+      <section class="card">
         <h2>Full instructions</h2>
         <p><a href="guide.html" target="_blank" rel="noopener">Open the step-by-step admin &amp; app guide ↗</a></p>
+        <p><a href="media/instructions.pdf" target="_blank" rel="noopener">Download the guide as a PDF ↗</a></p>
       </section>
       <section class="card">
         <h2>Things that need a developer</h2>

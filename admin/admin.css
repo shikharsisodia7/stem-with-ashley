@@ -241,3 +241,5 @@ body:has(.editor-actions) .draft-bar { display: none; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.help-video { width: 100%; max-width: 860px; border-radius: var(--radius); background: #000; }

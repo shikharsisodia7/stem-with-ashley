@@ -3,7 +3,7 @@ tests/
 scripts/
 supabase/
 docs/superpowers/
-*.mp4
+/*.mp4
 .semgrep/
 .superpowers/
 .sonar/
