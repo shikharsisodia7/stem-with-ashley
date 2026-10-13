@@ -1,63 +1,54 @@
 # Stem with Ashley Career Resources — Five-Year STEM Career Roadmap
 
-A self-contained web app for recent college graduates entering STEM careers. Pick a
-field, see a realistic five-year path from entry-level to senior roles, browse
-certifications (with links to the real provider page)/schools/conferences/organizations,
-explore developmental skills, work through a step-by-step Interview Prep guide, turn
-your own notes into a printable Worksheet Generator practice sheet, and bookmark
-anything of interest into a printable shortlist for a career-coach conversation.
+A web app for recent college graduates entering STEM careers. Pick a field, see a
+realistic five-year path from entry-level to senior roles, browse certifications
+(linked to the real provider page), schools, conferences, and organizations, explore
+developmental skills, work through a 14-step Interview Prep guide, turn your own notes
+into a printable practice worksheet, search early-career jobs, and bookmark anything
+into a printable shortlist for a career-coach conversation.
 
-Live site: deployed on Vercel as project `stem-with-ashley`.
+- **Live site:** <https://stem-with-ashley.vercel.app>
+- **Admin dashboard (content editing):** <https://stem-with-ashley.vercel.app/admin/>
 
-## What this is built with
+## Updating content (start here if you're Ashley)
 
-Plain HTML, CSS, and JavaScript. No framework, no build step, no npm install, no
-backend, no database, no paid services. That's intentional — it means there's nothing
-to break from a bad build, and no dependency that can go stale or need updating.
+Sign in to the **admin dashboard** and edit everything with normal forms: career
+fields, majors, skills, resources, interview questions/stages/checklists, and job
+listings. Save a draft, preview it, and click Publish; the website updates itself
+in about a minute. No GitHub, JSON, or code needed.
 
-- `index.html` / `styles.css` / `app.js` — the app itself.
-- `data/roadmap-data.json` — **all the content** (career pathways, companies, certs,
-  schools, conferences, organizations, skills, majors, resources, and per-field
-  podcast/YouTube media links). This is the only file you need to touch to update
-  what the app shows. See **`data/README.md`** for a full editing guide written for a
-  non-technical editor.
+- Step-by-step guide: **[docs/ASHLEY-ADMIN-GUIDE.md](docs/ASHLEY-ADMIN-GUIDE.md)**
+  (also at `/admin/guide.html` on the live site)
+- How every app works: **[docs/ASHLEY-APP-USER-GUIDE.md](docs/ASHLEY-APP-USER-GUIDE.md)**
+- Something wrong? **[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)**
 
-## Editing the content (start here if you're Ashley)
+## For developers
 
-Open `data/README.md`. It walks through exactly how to edit an existing field, add a
-brand new field, or add a new skill — no coding required, just careful text editing
-inside a structured file.
+- **[docs/SHIKHAR-TECHNICAL-HANDOFF.md](docs/SHIKHAR-TECHNICAL-HANDOFF.md)**:
+  architecture, environment variables, setup, access management, rotation,
+  backups, known limitations.
+- **[docs/IMPLEMENTATION-AUDIT.md](docs/IMPLEMENTATION-AUDIT.md)**: what existed before
+  the dashboard and why it's built the way it is.
 
-## How to see your changes live
+The public site is still plain HTML/CSS/JS with no framework, no build step, and no
+runtime dependencies. The admin dashboard adds small Vercel Node functions in
+`api/` (no npm dependencies), Supabase for sign-in and drafts, and publishes by
+committing content to this repo, which Vercel deploys as before.
 
-This site is connected to GitHub, and GitHub is connected to Vercel. That means:
+Content lives in three files the dashboard edits for you:
+`data/roadmap-data.json`, `jobs/jobs-data.js`, and `interview-data.js` (the last two
+keep their data as JSON between `/* CMS-DATA-START */ … /* CMS-DATA-END */` markers).
+Developers can still edit them by hand; keep the JSON valid and run the tests.
 
-1. Edit `data/roadmap-data.json` (or any file) and save it.
-2. Commit and push the change to GitHub.
-3. Vercel automatically detects the push and redeploys the live site — usually within
-   a minute or two. Nothing else to click.
-
-### If you're comfortable with GitHub Desktop or the GitHub website
-
-- **GitHub Desktop**: open the app, select this repository, you'll see your edited
-  file listed as a change. Write a short summary (e.g. "Update aerospace companies
-  list"), click "Commit to main", then click "Push origin".
-- **GitHub website**: navigate to the file in the repository, click the pencil (edit)
-  icon, make your change in the browser, scroll down and click "Commit changes"
-  directly. This pushes automatically — no separate push step.
-
-## Running it on your own computer (optional, for previewing before you push)
-
-Because the app loads `data/roadmap-data.json` with a fetch request, opening
-`index.html` directly by double-clicking it won't work (browsers block that for local
-files). Instead, run a tiny local server from this folder:
+## Running it locally
 
 ```
-python -m http.server 8000
+node scripts/dev-server.js                       # static site + the real /api handlers
+CMS_FAKE_GITHUB=1 node scripts/dev-server.js      # same, but publishing goes to an in-memory fake repo
 ```
 
-Then open `http://localhost:8000` in your browser. Stop the server with Ctrl+C when
-you're done.
+Then open <http://127.0.0.1:4321> (the dashboard is at `/admin/`). Settings come from
+`.env.local` (see `.env.example`).
 
 ## Routes in this app
 
@@ -89,74 +80,54 @@ The app is a single-page hash-router (`index.html` + `app.js`). Current routes:
   Profiler quiz
 - `#/shortlist` — Bookmarked items, printable
 
-## Content Helper (`/admin/`)
+## Admin dashboard (`/admin/`)
 
-A local, no-login form-based tool that turns plain-text form fields into a correctly
-formatted JSON block for `data/roadmap-data.json` or `jobs/jobs-data.js` — so a
-non-technical editor doesn't have to type JSON by hand. It never saves, uploads, or
-publishes anything itself (no GitHub token, no backend); it just generates text to
-copy and paste. See `data/README.md` for how it fits into the editing workflow.
+Sign-in (Supabase Auth), content editors for every collection, durable drafts,
+preview on the real site, review & publish with live-deployment tracking, version
+history with restore, an activity log, and team access with one-time setup links.
+Code: `admin/` (UI + shared schema) and `api/` (server). Details are in the
+technical handoff.
 
 ## Job Finder sub-app
 
 `/jobs/` is a separate, self-contained sub-app living inside this same repo and
 deploy — it's a second static HTML page (`jobs/index.html` + its own JS/CSS) that
 loads independently of the hash-router above. Reach it directly at `/jobs/`, via the
-"Find a Job" link in the main nav, or from the Resources page. It currently filters a
-small set of sample job listings (clearly labeled as sample data in the UI) by field,
+"Find a Job" link in the main nav, or from the Resources page. It filters job listings (each labeled in the UI as a Sample or a Real listing with a link to the original posting) by field,
 keyword, experience level, and location, using a pure filtering function
 (`jobs/jobs-filter.js`) covered by Node test-runner tests (`jobs/jobs-filter.test.js`,
-run with `node --test jobs/jobs-filter.test.js`). Swapping in a real job-listings API later only requires
-replacing `jobs/jobs-data.js`'s sample array with a fetch — the filter logic and UI
-don't need to change.
+run with `node --test jobs/jobs-filter.test.js`). Listings are managed in the admin dashboard; a real job-listings API could later replace `jobs/jobs-data.js` without changing the filter logic or UI.
 
 ## Project structure
 
 ```
 stem-with-ashley/
-  index.html              # page shell
-  styles.css               # all styling (incl. print styles for shortlist/worksheet)
-  app.js                    # routing, rendering, bookmarking logic
-  utils.js                   # shared esc()/localStorage helpers
-  interview.js                # Interview Prep Guide — step rendering + wiring
-  interview-data.js            # ALL interview content — edit this to add/change questions
-  interview-data.test.js        # structural validation (counts, unique ids, required fields)
-  interview-questions.js         # pure question-bank search/filter logic (unit tested)
-  interview-questions.test.js
-  interview-recorder.js          # browser-native video practice recorder (unit-tested helpers)
-  interview-recorder.test.js
-  interview-star.js            # pure STAR-answer-combining logic (unit tested)
-  interview-star.test.js
-  worksheet.js                 # Worksheet Generator — UI rendering + wiring
-  worksheet-generator.js        # pure text-transformation logic (unit tested)
-  worksheet-generator.test.js
-  data/
-    roadmap-data.json       # ALL content — edit this to update the app
-    roadmap-data.test.js     # structural validation tests for the data file
-    README.md                # editing guide for non-technical editors
-  admin/
-    index.html               # Content Helper — form-to-JSON generator (no backend)
-    admin.js
-    admin.css
-  jobs/
-    index.html               # standalone Job Finder sub-app (separate page)
-    jobs-app.js               # UI wiring for the Job Finder
-    jobs-filter.js             # pure filtering logic, used by the UI and by tests
-    jobs-filter.test.js         # Node test-runner tests for jobs-filter.js
-    jobs-data.js                 # sample job listings (swap for a real API later)
-    jobs.css                      # Job Finder-specific styling
-  assets/
-    logo.jpeg                # header logo / favicon
-  docs/
-    superpowers/specs/       # original design spec for this project
+  index.html, styles.css, app.js, utils.js   # public site shell, routing, shared helpers
+  interview*.js, worksheet*.js                # Interview Prep + Worksheet Generator (+ tests)
+  interview-data.js                           # interview content (dashboard-managed parts + developer parts)
+  data/roadmap-data.json                      # fields, majors, skills, resources
+  jobs/                                       # Job Finder sub-app (jobs-data.js = listings)
+  admin/                                      # admin dashboard UI, shared content schema, guide.html
+  api/                                        # Vercel functions for the dashboard (api/_lib = shared code)
+  scripts/                                    # local dev server, fake GitHub, guide builder
+  supabase/migrations/                        # database schema for drafts/history/audit
+  tests/                                      # API tests (Node) + e2e browser tests (Playwright)
+  docs/                                       # guides, handoff, troubleshooting, screenshots
+  vercel.json                                 # daily keep-alive cron + admin security headers
 ```
 
 ## Running the tests
 
-No install needed — these use Node's built-in test runner:
+No install needed. Node's built-in test runner finds every `*.test.js`:
 
 ```
-node --test data/roadmap-data.test.js interview-star.test.js interview-data.test.js interview-questions.test.js interview-recorder.test.js worksheet-generator.test.js jobs/jobs-filter.test.js
+node --test
+```
+
+Browser tests (Playwright; real Supabase sign-in, fake GitHub):
+
+```
+cd tests/e2e && npm ci && npx playwright test
 ```
 
 ## Notes on scope

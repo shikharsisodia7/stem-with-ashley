@@ -1,3 +1,9 @@
+> **Ashley: you don't need this file anymore.** Use the admin dashboard at
+> <https://stem-with-ashley.vercel.app/admin/> (guide: `docs/ASHLEY-ADMIN-GUIDE.md`).
+> It edits this content with simple forms, checks it, and publishes it for you.
+> The notes below are kept for **developers** who want to edit `roadmap-data.json`
+> by hand. The old "Content Helper" copy/paste page has been replaced by the dashboard.
+
 # Editing the career data (for Ashley)
 
 Everything the app shows — career pathways, companies, certifications, schools,

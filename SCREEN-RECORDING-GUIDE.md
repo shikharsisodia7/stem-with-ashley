@@ -1,3 +1,7 @@
+> **Outdated (August 2026).** This guide described recording the old manual
+> JSON-editing workflow. It's replaced by `docs/SCREEN-RECORDING-SCRIPT.md`, which
+> walks through the admin dashboard. Kept for history only.
+
 # Screen Recording Guide — "How Ashley Edits Content"
 
 **Status: this environment cannot record narrated desktop video** (no camera/mic/screen-video
