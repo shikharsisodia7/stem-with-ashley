@@ -3,62 +3,110 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Content Helper — Stem with Ashley Career Resources</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin Dashboard — Stem with Ashley Career Resources</title>
   <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="admin.css" />
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="../index.html">
+<body class="admin-body">
+  <header class="site-header admin-header">
+    <a class="brand" href="#/overview">
       <img class="brand-logo" src="../assets/logo.jpeg" alt="Stem with Ashley Career Resources logo" width="40" height="40" />
-      <span class="brand-text">Stem&nbsp;with&nbsp;Ashley — Content&nbsp;Helper</span>
+      <span class="brand-text">Stem&nbsp;with&nbsp;Ashley <span class="admin-brand-tag">Admin</span></span>
     </a>
-    <nav class="site-nav">
-      <a href="../index.html">&larr; Back to site</a>
+    <nav class="site-nav admin-top-nav" aria-label="Admin shortcuts">
+      <a href="../" target="_blank" rel="noopener">View live website ↗</a>
+      <a href="guide.html" target="_blank" rel="noopener">Help / Instructions</a>
+      <button type="button" class="btn btn-secondary btn-small" id="signout-btn" hidden>Sign out</button>
     </nav>
   </header>
 
-  <main id="admin-app">
-    <h1>Content Helper</h1>
-    <p>This page helps you build a correctly formatted block of content to paste into
-      <code>data/roadmap-data.json</code> or <code>jobs/jobs-data.js</code> — without having to
-      hand-type JSON yourself. It does <strong>not</strong> save, upload, or publish anything.
-      Nothing you type here leaves your browser, and this page cannot connect to GitHub or change
-      the live site on its own.</p>
-    <p class="privacy-note">🔒 Everything on this page runs locally in your browser. There are no
-      accounts, no sign-in, and no server involved.</p>
+  <!-- Signed-out screens -->
+  <main id="auth-screen" class="auth-screen" hidden>
+    <div class="auth-card">
+      <h1 id="auth-title">Sign in</h1>
+      <p id="auth-intro" class="muted-note">Sign in to update the career roadmap, majors, skills, resources, interview prep, and job listings.</p>
+      <div id="auth-message" class="notice" role="status" aria-live="polite" hidden></div>
 
-    <div class="form-field">
-      <label for="content-type">What are you adding or editing?</label>
-      <select id="content-type">
-        <option value="field">Career Field</option>
-        <option value="major">Major</option>
-        <option value="certification">Certification (for an existing field)</option>
-        <option value="resource">Resource (Resources page)</option>
-        <option value="skill">Developmental Skill</option>
-        <option value="job">Job Listing (Job Finder sample data)</option>
-      </select>
-    </div>
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="form-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" autocomplete="username" required />
+        </div>
+        <div class="form-field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn-block" id="login-submit">Sign in</button>
+        <button type="button" class="link-btn" id="forgot-btn">Forgot your password?</button>
+      </form>
 
-    <form id="admin-form" class="admin-form"></form>
+      <form id="forgot-form" class="auth-form" novalidate hidden>
+        <div class="form-field">
+          <label for="forgot-email">Your email</label>
+          <input type="email" id="forgot-email" autocomplete="username" required />
+        </div>
+        <button type="submit" class="btn btn-block">Email me a reset link</button>
+        <button type="button" class="link-btn" id="back-to-login">Back to sign in</button>
+      </form>
 
-    <div class="admin-output-block">
-      <div class="admin-output-header">
-        <h2>Generated content block</h2>
-        <button type="button" class="btn btn-secondary" id="copy-btn">Copy to clipboard</button>
-      </div>
-      <pre id="admin-output" class="admin-output" tabindex="0"></pre>
-      <p id="admin-instructions" class="admin-instructions"></p>
+      <form id="password-form" class="auth-form" novalidate hidden>
+        <p class="muted-note" id="password-for"></p>
+        <div class="form-field">
+          <label for="new-password">New password</label>
+          <input type="password" id="new-password" autocomplete="new-password" minlength="10" required aria-describedby="pw-help" />
+          <p id="pw-help" class="muted-note">At least 10 characters. A short phrase you'll remember works well.</p>
+        </div>
+        <div class="form-field">
+          <label for="new-password-2">Type it again</label>
+          <input type="password" id="new-password-2" autocomplete="new-password" minlength="10" required />
+        </div>
+        <button type="submit" class="btn btn-block">Save password and continue</button>
+      </form>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>Content Helper — a local tool for building JSON blocks by hand-free form filling. See
-      <code>data/README.md</code> for the full editing guide.</p>
-  </footer>
+  <!-- Signed-in dashboard -->
+  <div id="dashboard" class="dashboard" hidden>
+    <button type="button" class="btn btn-secondary sidebar-toggle" id="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+    <aside id="sidebar" class="sidebar" aria-label="Dashboard sections">
+      <nav>
+        <a href="#/overview" data-nav="overview">Overview</a>
+        <p class="sidebar-heading">Content</p>
+        <a href="#/c/fields" data-nav="fields">Career Fields</a>
+        <a href="#/c/majors" data-nav="majors">College Majors</a>
+        <a href="#/c/skills" data-nav="skills">Developmental Skills</a>
+        <a href="#/c/resources" data-nav="resources">Career Resources</a>
+        <a href="#/c/questions" data-nav="questions">Interview Questions</a>
+        <a href="#/c/stages" data-nav="stages">Interview Stages</a>
+        <a href="#/c/guidance" data-nav="guidance">Interview Guidance</a>
+        <a href="#/c/jobs" data-nav="jobs">Job Finder</a>
+        <p class="sidebar-heading">Publishing</p>
+        <a href="#/publish" data-nav="publish">Review &amp; Publish <span class="badge" id="draft-badge" hidden></span></a>
+        <a href="#/history" data-nav="history">Version History</a>
+        <p class="sidebar-heading">Account</p>
+        <a href="#/settings" data-nav="settings">Settings</a>
+        <a href="#/help" data-nav="help">Help</a>
+      </nav>
+    </aside>
+    <main id="view" class="admin-view" tabindex="-1">
+      <p>Loading…</p>
+    </main>
+  </div>
 
+  <div id="draft-bar" class="draft-bar" role="status" aria-live="polite" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="modal-root"></div>
+
+  <noscript><p class="notice">The admin dashboard needs JavaScript turned on.</p></noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"
+    integrity="sha384-0w2KAL2YHP6wKOkUDzkCDGgVvfmHnj02DHeQ6XcHOgTfFsGyonKOpShMH1x6nk9o"
+    crossorigin="anonymous"></script>
   <script src="../utils.js"></script>
+  <script src="cms-schema.js"></script>
+  <script src="admin-forms.js"></script>
   <script src="admin.js"></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+// Browser tests. The dev server runs the real /api handlers against the REAL
+// Supabase project (sign-in, drafts, audit log) and an in-memory FAKE GitHub that
+// also acts as the "live website" — so publishing is exercised end to end without
+// changing the real repository. Credentials come from ../../.env.local (gitignored).
+//
+// On this project's Windows dev machine, browsers run inside Docker via the
+// Playwright relay (PW_TEST_CONNECT_WS_ENDPOINT); elsewhere Playwright runs normally.
+const { defineConfig, devices } = require("@playwright/test");
+
+const PORT = 4400;
+
+module.exports = defineConfig({
+  testDir: ".",
+  timeout: 90_000,
+  expect: { timeout: 15_000 },
+  workers: 1,
+  fullyParallel: false,
+  reporter: [["list"]],
+  use: {
+    baseURL: `http://localhost:${PORT}`,
+    trace: "retain-on-failure",
+    screenshot: "only-on-failure",
+  },
+  projects: [
+    { name: "desktop", use: { ...devices["Desktop Chrome"] }, grepInvert: /@mobile-only/ },
+    { name: "mobile", use: { ...devices["Pixel 7"] }, grep: /@mobile/ },
+  ],
+  webServer: {
+    command: "node ../../scripts/dev-server.js",
+    url: `http://127.0.0.1:${PORT}/index.html`,
+    reuseExistingServer: false,
+    env: { PORT: String(PORT), CMS_FAKE_GITHUB: "1", CMS_FAKE_DEPLOY_MS: "4000" },
+    timeout: 30_000,
+  },
+});

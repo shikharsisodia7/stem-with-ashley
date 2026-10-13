@@ -46,3 +46,7 @@ main#jobs-app {
 }
 .job-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
 .job-card p { color: var(--text-muted); font-size: 0.92rem; margin: 0.6rem 0 0; }
+
+.chip-sample { background: #f1f3f5; color: #5a6472; }
+.chip-real { background: #e8f6ee; color: #0f7b3f; font-weight: 600; }
+.job-source { margin: 0.25rem 0 0; }

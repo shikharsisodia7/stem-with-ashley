@@ -21,7 +21,7 @@
 
   <main id="jobs-app">
     <h1>Find a STEM job</h1>
-    <p class="sample-banner">These are sample listings for demo purposes. See the comment at the top of <code>jobs-data.js</code> for how to connect a real job feed.</p>
+    <p class="sample-banner" id="jobs-banner">These are sample listings for demonstration — they are not real, currently open jobs.</p>
 
     <form id="jobs-filters" class="jobs-filters">
       <div class="filter-field">
@@ -54,9 +54,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>Sample job data for demonstration. Not real, currently open listings.</p>
+    <p>Listings marked “Sample” are for demonstration only. Always confirm a job on the employer's own site before applying.</p>
   </footer>
 
+  <script src="../utils.js"></script>
   <script src="jobs-data.js"></script>
   <script src="jobs-filter.js"></script>
   <script src="jobs-app.js"></script>

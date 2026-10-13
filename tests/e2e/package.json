@@ -1,0 +1,11 @@
+{
+  "name": "stem-with-ashley-e2e",
+  "private": true,
+  "description": "Browser tests for the public apps and the admin dashboard. Kept in its own folder so the deployed site stays dependency-free.",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1"
+  }
+}

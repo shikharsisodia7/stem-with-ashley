@@ -440,8 +440,14 @@ function render() {
 
 async function init() {
   try {
-    const res = await fetch(DATA_URL);
-    ROADMAP_DATA = await res.json();
+    const preview = await receivePreviewData();
+    if (preview && preview.roadmap) {
+      ROADMAP_DATA = preview.roadmap;
+      if (preview.interview) window.InterviewData = preview.interview;
+    } else {
+      const res = await fetch(DATA_URL);
+      ROADMAP_DATA = await res.json();
+    }
     render();
   } catch (e) {
     document.getElementById("app").innerHTML =

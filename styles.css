@@ -631,3 +631,9 @@ h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
 @media print {
   .qb-tabs, .qb-filters, .video-practice-panel, .video-controls { display: none !important; }
 }
+
+/* Admin dashboard preview banner (shown only inside the dashboard preview frame) */
+.cms-preview-banner {
+  position: sticky; top: 0; z-index: 30; padding: 0.5rem 1rem; text-align: center;
+  background: #fff6dc; border-bottom: 1px solid #f1d68a; color: #5c3d00; font-weight: 600;
+}

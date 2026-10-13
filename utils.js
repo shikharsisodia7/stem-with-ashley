@@ -27,6 +27,29 @@ function safeSetJSON(key, value) {
   }
 }
 
+// Admin dashboard preview: when a page is opened inside the dashboard's preview
+// frame (?cms-preview=1), it asks the dashboard (same origin only) for the draft
+// content instead of loading the published files. Resolves null otherwise.
+function receivePreviewData() {
+  if (typeof window === "undefined" || window.parent === window) return Promise.resolve(null);
+  if (!new URLSearchParams(window.location.search).has("cms-preview")) return Promise.resolve(null);
+  return new Promise((resolve) => {
+    const timer = setTimeout(() => resolve(null), 5000);
+    window.addEventListener("message", function onMessage(e) {
+      if (e.origin !== window.location.origin || e.source !== window.parent) return;
+      if (!e.data || e.data.type !== "cms-preview-data") return;
+      clearTimeout(timer);
+      window.removeEventListener("message", onMessage);
+      const banner = document.createElement("div");
+      banner.className = "cms-preview-banner";
+      banner.textContent = "Preview of unpublished changes — not visible to the public yet.";
+      document.body.prepend(banner);
+      resolve(e.data);
+    });
+    window.parent.postMessage({ type: "cms-preview-ready" }, window.location.origin);
+  });
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { esc, safeGetJSON, safeSetJSON };
+  module.exports = { esc, safeGetJSON, safeSetJSON, receivePreviewData };
 }

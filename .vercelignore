@@ -1,0 +1,9 @@
+# Not needed on the live site.
+tests/
+scripts/
+supabase/
+docs/superpowers/
+*.mp4
+.semgrep/
+.superpowers/
+.sonar/
