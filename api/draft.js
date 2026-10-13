@@ -15,9 +15,10 @@ module.exports = handler(["PUT", "DELETE"], async (req, res) => {
   if (req.method === "DELETE") {
     const doc = query(req).doc;
     if (!Schema.DOC_NAMES.includes(doc)) throw new HttpError(400, "Unknown content type.");
-    await database.deleteDraft(doc);
-    await database.audit("discard_draft", true, { doc });
-    return send(res, 200, { ok: true });
+    const removed = await database.deleteDraft(doc);
+    // Only log real discards (clearing an already-empty draft is a no-op).
+    if (Array.isArray(removed) && removed.length) await database.audit("discard_draft", true, { doc });
+    return send(res, 200, { ok: true, discarded: Array.isArray(removed) ? removed.length : 0 });
   }
 
   const body = await readJson(req);

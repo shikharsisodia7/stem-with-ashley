@@ -136,6 +136,19 @@ test("drafts persist on the server and survive a fresh load (e.g. after sign-out
   assert.equal((await content()).docs.roadmap.draft, null);
 });
 
+test("discarding an empty draft is a no-op and isn't logged", async () => {
+  await resetDrafts();
+  const count = () => sb.tables.cms_audit.filter((a) => a.action === "discard_draft").length;
+  const before = count();
+  const r = await call("draft?doc=jobs", { method: "DELETE" });
+  assert.equal(r.data.discarded, 0);
+  assert.equal(count(), before);
+  await saveDraft("jobs", (w) => { w[0].description += " x"; });
+  const r2 = await call("draft?doc=jobs", { method: "DELETE" });
+  assert.equal(r2.data.discarded, 1);
+  assert.equal(count(), before + 1);
+});
+
 test("drafts may be unfinished: saved with warnings instead of refused", async () => {
   await resetDrafts();
   const r = await saveDraft("roadmap", (w) => { w.resources[0].url = "not a url"; });
