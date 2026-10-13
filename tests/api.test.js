@@ -326,6 +326,35 @@ test("history lists versions with who published them, plus the audit trail", asy
   assert.ok(r.data.audit.some((a) => a.action === "publish" && a.ok === false));
 });
 
+test("history neutralizes forged log rows (an editor can write those tables directly)", async () => {
+  const head = srv.fake.head().sha;
+  const payload = '"><img src=x onerror=alert(document.cookie)>';
+  sb.tables.cms_publications.push({
+    id: 9999, kind: "publish", commit_sha: head, docs: ["roadmap"], published_by: "editor@example.test",
+    summary: { changes: [{ type: payload, collection: payload, title: payload, extra: "x" }] }, restored_from: payload,
+    created_at: new Date().toISOString(),
+  });
+  sb.tables.cms_audit.push({ id: 9999, action: payload, ok: "yes", actor: "editor@example.test", details: { removed: [{ title: payload }], secret: "x" }, created_at: new Date().toISOString() });
+  const r = await call("history");
+  const v = r.data.versions.find((x) => x.sha === head);
+  assert.equal(v.changes[0].type, "edited", "unknown change types are coerced");
+  assert.deepEqual(Object.keys(v.changes[0]).sort(), ["collection", "title", "type"]);
+  assert.equal(v.restoredFrom, null);
+  const a = r.data.audit.find((x) => x.action.startsWith('"'));
+  assert.equal(a.ok, false);
+  assert.equal("secret" in a.details, false);
+  sb.tables.cms_publications.pop();
+  sb.tables.cms_audit.pop();
+});
+
+test("public renderers only link to http(s) URLs", () => {
+  const { safeHttpUrl } = require("../utils.js");
+  assert.equal(safeHttpUrl("https://ok.org/x"), "https://ok.org/x");
+  assert.equal(safeHttpUrl(" javascript:alert(1)"), "#");
+  assert.equal(safeHttpUrl("data:text/html,x"), "#");
+  assert.equal(safeHttpUrl(undefined), "#");
+});
+
 test("restore requires confirmation when drafts exist, then republishes the old content as a new commit", async () => {
   const h = (await call("history")).data;
   const target = h.versions.find((v) => /Initial/.test(v.message));

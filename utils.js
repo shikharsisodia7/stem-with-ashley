@@ -7,6 +7,12 @@ function esc(str) {
   }[c]));
 }
 
+// Only http(s) links are ever rendered as clickable hrefs; anything else (e.g. a
+// "javascript:" link in an unpublished draft shown in the admin preview) becomes "#".
+function safeHttpUrl(url) {
+  return typeof url === "string" && /^https?:\/\//i.test(url.trim()) ? url.trim() : "#";
+}
+
 function safeGetJSON(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
@@ -51,5 +57,5 @@ function receivePreviewData() {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { esc, safeGetJSON, safeSetJSON, receivePreviewData };
+  module.exports = { esc, safeHttpUrl, safeGetJSON, safeSetJSON, receivePreviewData };
 }

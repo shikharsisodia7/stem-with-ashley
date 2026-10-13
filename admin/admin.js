@@ -30,6 +30,13 @@
   const clone = (v) => JSON.parse(JSON.stringify(v));
   const fmtDate = (iso) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) : "—");
   const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+  // Change summaries can come from database rows, which a signed-in editor could
+  // write directly — so never put their fields into markup unescaped.
+  const CHANGE_TYPES = ["added", "edited", "removed", "reordered"];
+  const changeTag = (type) => {
+    const t = CHANGE_TYPES.includes(type) ? type : "edited";
+    return `<span class="tag tag-${t}">${esc(t)}</span>`;
+  };
 
   // ---------- Toast + modal ----------
 
@@ -884,7 +891,7 @@
     const changes = report.changes || [];
     const grouped = {};
     changes.forEach((c) => { (grouped[c.collection] = grouped[c.collection] || []).push(c); });
-    const indexOf = (e) => (e.index === null || e.index === undefined ? "" : `/${e.index}`);
+    const indexOf = (e) => (Number.isInteger(e.index) && e.index >= 0 ? `/${e.index}` : "");
     view().innerHTML = `
       <h1>Review &amp; Publish</h1>
       <p>These changes are saved as a draft. Nobody else can see them until you publish.</p>
@@ -896,7 +903,7 @@
         <h2>What will change (${changes.length})</h2>
         ${changes.length ? Object.entries(grouped).map(([colName, list]) => `
           <h3>${esc(Schema.COLLECTIONS[colName].label)}</h3>
-          <ul class="change-list">${list.map((c) => `<li><span class="tag tag-${c.type}">${esc(c.type)}</span> ${esc(c.title)}</li>`).join("")}</ul>`).join("")
+          <ul class="change-list">${list.map((c) => `<li>${changeTag(c.type)} ${esc(c.title)}</li>`).join("")}</ul>`).join("")
           : "<p>Your drafts match the live website — publishing will just clear them.</p>"}
       </section>
       <div class="editor-actions">
@@ -1071,8 +1078,8 @@
               ${v.current ? '<span class="tag tag-real">Live now</span>' : ""}
               ${v.kind === "restore" ? '<span class="tag tag-draft">Restore</span>' : ""}
               <div class="item-card-sub">By ${esc(v.publishedBy)}</div>
-              ${v.changes && v.changes.length
-                ? `<details><summary>${plural(v.changes.length, "change")}</summary><ul class="change-list">${v.changes.map((c) => `<li><span class="tag tag-${c.type}">${esc(c.type)}</span> ${esc(Schema.COLLECTIONS[c.collection] ? Schema.COLLECTIONS[c.collection].label : c.collection)} — ${esc(c.title)}</li>`).join("")}</ul></details>`
+              ${Array.isArray(v.changes) && v.changes.length
+                ? `<details><summary>${plural(v.changes.length, "change")}</summary><ul class="change-list">${v.changes.map((c) => `<li>${changeTag(c.type)} ${esc(Schema.COLLECTIONS[c.collection] ? Schema.COLLECTIONS[c.collection].label : c.collection)} — ${esc(c.title)}</li>`).join("")}</ul></details>`
                 : `<div class="item-card-sub">${esc(v.message)}</div>`}
             </div>
             ${v.current ? "" : `<button type="button" class="btn btn-secondary btn-small" data-restore="${esc(v.sha)}" data-date="${esc(fmtDate(v.date))}">Restore this version</button>`}
@@ -1081,7 +1088,7 @@
       <section class="card">
         <h2>Activity log</h2>
         <ul class="activity-list">
-          ${h.audit.map((a) => `<li class="${a.ok ? "" : "activity-failed"}"><strong>${esc(fmtDate(a.created_at))}</strong> — ${esc(a.actor || "system")}: ${esc(actionLabels[a.action] || a.action)}${a.ok ? "" : " (failed)"}${a.details && a.details.removed && a.details.removed.length ? ` — deleted ${esc(a.details.removed.map((r) => r.title).join(", "))}` : ""}${a.details && a.details.email ? ` — ${esc(a.details.email)}` : ""}</li>`).join("") || "<li>No activity yet.</li>"}
+          ${h.audit.map((a) => `<li class="${a.ok ? "" : "activity-failed"}"><strong>${esc(fmtDate(a.created_at))}</strong> — ${esc(a.actor || "system")}: ${esc(actionLabels[a.action] || a.action)}${a.ok ? "" : " (failed)"}${a.details && Array.isArray(a.details.removed) && a.details.removed.length ? ` — deleted ${esc(a.details.removed.map((r) => (r && r.title) || "").join(", "))}` : ""}${a.details && a.details.email ? ` — ${esc(a.details.email)}` : ""}</li>`).join("") || "<li>No activity yet.</li>"}
         </ul>
       </section>`;
     renderTrackingInto($("#tracking-slot"));

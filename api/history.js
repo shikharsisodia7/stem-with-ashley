@@ -7,6 +7,33 @@ const { requireUser } = require("./_lib/auth");
 const { db } = require("./_lib/db");
 const github = require("./_lib/github");
 
+// Rows in cms_publications / cms_audit can be inserted by any signed-in editor
+// (row-level security allows it so the server can log with the user's own token),
+// so treat them as untrusted: keep only known shapes and plain strings.
+const CHANGE_TYPES = new Set(["added", "edited", "removed", "reordered"]);
+const str = (v, max) => (typeof v === "string" ? v.slice(0, max || 200) : v === null || v === undefined ? "" : String(v).slice(0, max || 200));
+function cleanChanges(list) {
+  if (!Array.isArray(list)) return null;
+  return list.slice(0, 30).map((c) => ({
+    type: CHANGE_TYPES.has(c && c.type) ? c.type : "edited",
+    collection: str(c && c.collection, 40),
+    title: str(c && c.title, 120),
+  }));
+}
+function cleanAudit(a) {
+  const d = a && a.details && typeof a.details === "object" ? a.details : {};
+  return {
+    created_at: str(a.created_at, 40),
+    actor: str(a.actor, 200),
+    action: str(a.action, 40),
+    ok: a.ok === true,
+    details: {
+      ...(Array.isArray(d.removed) ? { removed: d.removed.slice(0, 20).map((r) => ({ title: str(r && r.title, 120) })) } : {}),
+      ...(d.email ? { email: str(d.email, 200) } : {}),
+    },
+  };
+}
+
 module.exports = handler(["GET"], async (req, res) => {
   const { token } = await requireUser(req);
   const database = db(token);
@@ -41,13 +68,13 @@ module.exports = handler(["GET"], async (req, res) => {
         current: i === 0,
         source: p ? "dashboard" : "developer",
         kind: p ? p.kind : "developer",
-        publishedBy: p ? p.published_by : "Developer (GitHub)",
-        changes: p && p.summary && p.summary.changes ? p.summary.changes.slice(0, 30) : null,
-        restoredFrom: p ? p.restored_from : null,
+        publishedBy: p ? str(p.published_by, 200) : "Developer (GitHub)",
+        changes: p && p.summary ? cleanChanges(p.summary.changes) : null,
+        restoredFrom: p && /^[0-9a-f]{40}$/.test(p.restored_from || "") ? p.restored_from : null,
       };
     });
   send(res, 200, {
     versions,
-    audit: (audit || []).filter((a) => a.action !== "save_draft").slice(0, 40),
+    audit: (audit || []).filter((a) => a.action !== "save_draft").slice(0, 40).map(cleanAudit),
   });
 });

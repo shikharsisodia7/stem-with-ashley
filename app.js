@@ -140,7 +140,7 @@ function renderResources() {
     .map((r) => `
       <div class="item-row">
         <div class="item-text">
-          <div class="item-title"><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></div>
+          <div class="item-title"><a href="${esc(safeHttpUrl(r.url))}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></div>
           <div class="item-sub">${esc(r.provider)}</div>
           <p>${esc(r.description)}</p>
         </div>
@@ -202,7 +202,7 @@ function renderField(fieldId) {
       return `
         <div class="item-row">
           <div class="item-text">
-            <div class="item-title"><a href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">${esc(m.title)}</a> <span class="item-sub">(${label})</span></div>
+            <div class="item-title"><a href="${esc(safeHttpUrl(m.url))}" target="_blank" rel="noopener noreferrer">${esc(m.title)}</a> <span class="item-sub">(${label})</span></div>
             <div class="item-sub">${esc(m.description)}</div>
           </div>
         </div>`;
@@ -226,7 +226,7 @@ function renderField(fieldId) {
         detail: `Issued by ${c.provider}`,
       });
       const nameHtml = c.url
-        ? `<a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a>`
+        ? `<a href="${esc(safeHttpUrl(c.url))}" target="_blank" rel="noopener noreferrer">${esc(c.name)}</a>`
         : esc(c.name);
       return `
         <div class="item-row">

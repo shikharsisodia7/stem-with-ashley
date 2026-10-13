@@ -23,15 +23,11 @@ function isSample(job) {
   return job.isSampleData !== false;
 }
 
-function safeHttpUrl(url) {
-  return typeof url === "string" && /^https?:///i.test(url) ? url : "";
-}
-
 function jobCard(job) {
   const fieldName = FIELD_NAMES[job.fieldId] || job.fieldId;
   const locationLabel = job.remote && job.location.toLowerCase() !== "remote"
     ? `${job.location} (Remote)` : job.location;
-  const source = safeHttpUrl(job.sourceUrl);
+  const source = job.sourceUrl && safeHttpUrl(job.sourceUrl) !== "#" ? safeHttpUrl(job.sourceUrl) : "";
   return `
     <div class="job-card">
       <h3>${esc(job.title)}</h3>
