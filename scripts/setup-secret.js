@@ -77,4 +77,16 @@ if (require.main === module) (async () => {
   if (!LOCAL_ONLY.has(name)) saveVercel(name, value);
   ps("Set-Clipboard -Value ' '");
   console.log(`✓ ${name} verified and saved (${value.slice(0, 6)}…${value.length} chars)${LOCAL_ONLY.has(name) ? " locally" : " to Vercel Production and .env.local"}. Clipboard cleared.`);
+  if (!LOCAL_ONLY.has(name)) {
+    // New env vars only reach the functions after a redeploy of production.
+    const { spawnSync } = require("node:child_process");
+    const r = spawnSync("vercel", ["ls", "stem-with-ashley", "--prod"], { cwd: ROOT, encoding: "utf8", shell: true });
+    const url = (`${r.stdout || ""}\n${r.stderr || ""}`.match(/https:\/\/stem-with-ashley-[a-z0-9]+-[\w-]+\.vercel\.app/) || [])[0];
+    if (url) {
+      execFileSync("vercel", ["redeploy", url, "--target", "production"], { cwd: ROOT, stdio: "ignore", shell: true });
+      console.log("✓ Production redeployed — the dashboard now uses it (about a minute).");
+    } else {
+      console.log("! Couldn't find the production deployment — redeploy it from the Vercel dashboard.");
+    }
+  }
 })().catch((e) => { console.error(`✗ ${e.message}`); process.exit(1); });

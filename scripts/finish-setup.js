@@ -23,7 +23,7 @@ const REPO = "shikharsisodia7/stem-with-ashley";
 const SITE = "https://stem-with-ashley.vercel.app";
 // Real email addresses live only in the gitignored .env.local (this repo is public).
 loadEnvFile(path.join(ROOT, ".env.local"));
-const ASHLEY = String(process.argv[2] || process.env.ASHLEY_EMAIL || "").toLowerCase();
+const ASHLEY = String(process.argv.slice(2).find((a) => !a.startsWith("--")) || process.env.ASHLEY_EMAIL || "").toLowerCase();
 const OWNER = String(process.env.ADMIN_OWNER_EMAIL || "").toLowerCase();
 const DESKTOP = [path.join(os.homedir(), "OneDrive", "Desktop"), path.join(os.homedir(), "Desktop")].find((d) => fs.existsSync(d));
 
@@ -169,6 +169,9 @@ Shikhar
   await checkPublishing();
   redeploy();
   await waitForFeatures();
+  // A new link for an existing account cancels any link already sent, so only create
+  // links when explicitly asked (both accounts were already sent links on 2026-10-13).
+  if (!process.argv.includes("--make-links")) { log("All done (no new sign-in links created; pass --make-links to create them)."); return; }
   const ashleyLink = link(ASHLEY, "admin");
   const ownerLink = link(OWNER);
   const emailFile = path.join(DESKTOP, "Email-to-Ashley.txt");
