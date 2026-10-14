@@ -116,8 +116,7 @@ storing drafts in localStorage (lost on another device; prompt forbids).
 - [x] Tests: schema (17), API with fakes (28), Playwright e2e (19 incl. real Supabase).
 - [x] Docs: admin guide, app user guide, technical handoff, troubleshooting,
       recording script, handoff email.
-- [ ] Owner actions that need Shikhar's accounts — see the technical handoff, §"Setup
-      still required".
+- [x] Owner account setup (tokens, Supabase settings, accounts): completed 2026-10-13 — see the technical handoff, §5 "Account setup".
 
 ## 5. What stays developer-maintained
 

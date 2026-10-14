@@ -21,6 +21,10 @@ in about a minute. No GitHub, JSON, or code needed.
   (also at `/admin/guide.html` on the live site)
 - How every app works: **[docs/ASHLEY-APP-USER-GUIDE.md](docs/ASHLEY-APP-USER-GUIDE.md)**
 - Something wrong? **[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)**
+- Video walkthrough + PDF guide: in the dashboard under **Help** (`/admin/media/`).
+
+`STEM-With-Ashley-App-User-Guide.pptx` and `SCREEN-RECORDING-GUIDE.md` are from August 2026
+(10 fields, no Interview Prep or admin dashboard) and are **superseded** by the guides above.
 
 ## For developers
 

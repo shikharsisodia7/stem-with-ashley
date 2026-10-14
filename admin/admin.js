@@ -1218,7 +1218,7 @@
           <p><strong>One-time ${r.linkType === "invite" ? "invite" : "password-reset"} link for ${esc(r.email)}:</strong></p>
           <p><input type="text" readonly class="link-box" value="${esc(r.link)}" aria-label="Sign-in link" /></p>
           <p><button type="button" class="btn btn-small" id="copy-link">Copy link</button></p>
-          <p class="muted-note">Send it to them yourself (email or text). It works once and expires after a while (1 hour unless the expiry was lengthened in Supabase) — make a new one any time. Never send a password.</p>
+          <p class="muted-note">Send it to them yourself (email or text). It works once and expires after 24 hours — make a new one any time. Never send a password.</p>
         </div>`;
       $("#copy-link").addEventListener("click", async () => {
         try { await navigator.clipboard.writeText(r.link); toast("Link copied.", "success"); } catch (e) { $(".link-box").select(); }

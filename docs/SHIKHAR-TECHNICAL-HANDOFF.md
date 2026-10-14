@@ -142,10 +142,25 @@ amounts, but this traffic is negligible). GitHub: free. No paid APIs are called.
 remove them: Supabase → Authentication → Users → delete (and drop their lines from
 `.env.local`). Leaving them is harmless but they are real admin logins.
 
-## 5. Setup still required (needs your accounts — ~10 minutes)
+## 5. Account setup (COMPLETED 2026-10-13)
 
-These are the only steps that need your personal GitHub/Supabase access. Do them in
-order.
+**Status: all done and verified on the live site.**
+- `GITHUB_TOKEN`: fine-grained token "stem-with-ashley-admin-publish", this repo only,
+  Contents read/write + Commit statuses read; **expires 2027-10-13** (calendar it,
+  see §7 to rotate). Saved to Vercel Production.
+- `SUPABASE_SERVICE_ROLE_KEY` saved to Vercel Production.
+- Supabase Auth: Site URL `…/admin/`, redirect `…/admin/**`, public sign-ups OFF,
+  email link/OTP expiry 86400 s, minimum password length 10.
+- Production redeployed. Verified live: Publish enabled, Version History loads, Team
+  access lists users, and a real commit test on a throwaway branch passed.
+- Accounts: Ashley (Administrator) was emailed a one-time setup link. Your own
+  setup link was saved to your Desktop.
+- Custom SMTP (step 7) is still optional: until it's configured, "Forgot your
+  password?" emails only reach Supabase org members, so make Ashley's reset links
+  from Team access.
+
+The original steps are kept below for reference, for example to redo the setup on a
+new project:
 
 1. **GitHub token for publishing.** <https://github.com/settings/personal-access-tokens/new>
    → Token name `stem-with-ashley-admin-publish` → Expiration: custom, up to 1 year
